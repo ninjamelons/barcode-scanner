@@ -285,8 +285,11 @@ CMakeFiles/opencv.dir/main.cpp.o: ../main.cpp \
   /usr/include/opencv4/opencv2/imgcodecs.hpp \
   /usr/include/opencv4/opencv2/videoio.hpp \
   /usr/include/opencv4/opencv2/imgproc.hpp \
-  /usr/include/opencv4/opencv2/imgproc/segmentation.hpp
+  /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
+  /usr/include/c++/10.2.0/iostream
 
+
+/usr/include/c++/10.2.0/iostream:
 
 /usr/include/opencv4/opencv2/imgproc/segmentation.hpp:
 
