@@ -1,0 +1,7 @@
+{
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 4,
+  "editor.tabCompletion": "on",
+  "editor.mouseWheelScrollSensitivity": 2
+}

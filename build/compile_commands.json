@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build",
+  "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/opencv.dir/main.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/main.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/main.cpp"
+}
+]

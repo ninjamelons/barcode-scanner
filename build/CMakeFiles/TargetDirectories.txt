@@ -1,0 +1,3 @@
+/home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/rebuild_cache.dir
+/home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/edit_cache.dir
+/home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/opencv.dir
