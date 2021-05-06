@@ -117,41 +117,115 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named opencv
+# Target rules for targets named hough
 
 # Build rule for target.
-opencv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 opencv
-.PHONY : opencv
+hough: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hough
+.PHONY : hough
 
 # fast build rule for target.
-opencv/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/build
-.PHONY : opencv/fast
+hough/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hough.dir/build.make CMakeFiles/hough.dir/build
+.PHONY : hough/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+#=============================================================================
+# Target rules for targets named edge
+
+# Build rule for target.
+edge: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 edge
+.PHONY : edge
+
+# fast build rule for target.
+edge/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/build
+.PHONY : edge/fast
+
+#=============================================================================
+# Target rules for targets named sobel
+
+# Build rule for target.
+sobel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sobel
+.PHONY : sobel
+
+# fast build rule for target.
+sobel/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/build
+.PHONY : sobel/fast
+
+edge.o: edge.cpp.o
+.PHONY : edge.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/main.cpp.o
-.PHONY : main.cpp.o
+edge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/edge.cpp.o
+.PHONY : edge.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+edge.i: edge.cpp.i
+.PHONY : edge.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/main.cpp.i
-.PHONY : main.cpp.i
+edge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/edge.cpp.i
+.PHONY : edge.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+edge.s: edge.cpp.s
+.PHONY : edge.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/main.cpp.s
-.PHONY : main.cpp.s
+edge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/edge.dir/build.make CMakeFiles/edge.dir/edge.cpp.s
+.PHONY : edge.cpp.s
+
+hough.o: hough.cpp.o
+.PHONY : hough.o
+
+# target to build an object file
+hough.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hough.dir/build.make CMakeFiles/hough.dir/hough.cpp.o
+.PHONY : hough.cpp.o
+
+hough.i: hough.cpp.i
+.PHONY : hough.i
+
+# target to preprocess a source file
+hough.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hough.dir/build.make CMakeFiles/hough.dir/hough.cpp.i
+.PHONY : hough.cpp.i
+
+hough.s: hough.cpp.s
+.PHONY : hough.s
+
+# target to generate assembly for a file
+hough.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hough.dir/build.make CMakeFiles/hough.dir/hough.cpp.s
+.PHONY : hough.cpp.s
+
+sobel.o: sobel.cpp.o
+.PHONY : sobel.o
+
+# target to build an object file
+sobel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/sobel.cpp.o
+.PHONY : sobel.cpp.o
+
+sobel.i: sobel.cpp.i
+.PHONY : sobel.i
+
+# target to preprocess a source file
+sobel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/sobel.cpp.i
+.PHONY : sobel.cpp.i
+
+sobel.s: sobel.cpp.s
+.PHONY : sobel.s
+
+# target to generate assembly for a file
+sobel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/sobel.cpp.s
+.PHONY : sobel.cpp.s
 
 # Help Target
 help:
@@ -161,10 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... opencv"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... edge"
+	@echo "... hough"
+	@echo "... sobel"
+	@echo "... edge.o"
+	@echo "... edge.i"
+	@echo "... edge.s"
+	@echo "... hough.o"
+	@echo "... hough.i"
+	@echo "... hough.s"
+	@echo "... sobel.o"
+	@echo "... sobel.i"
+	@echo "... sobel.s"
 .PHONY : help
 
 

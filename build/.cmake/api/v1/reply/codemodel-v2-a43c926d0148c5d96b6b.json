@@ -14,7 +14,9 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2
 					]
 				}
 			],
@@ -29,7 +31,9 @@
 					"name" : "opencv",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2
 					]
 				}
 			],
@@ -37,9 +41,23 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "opencv::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-opencv-Debug-c19e7f6343de9012bc8b.json",
-					"name" : "opencv",
+					"id" : "edge::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-edge-Debug-2745a6ff5cc3a4056d31.json",
+					"name" : "edge",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hough::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hough-Debug-f60927efd941350106db.json",
+					"name" : "hough",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sobel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sobel-Debug-96e7fa38146eeae35a3b.json",
+					"name" : "sobel",
 					"projectIndex" : 0
 				}
 			]

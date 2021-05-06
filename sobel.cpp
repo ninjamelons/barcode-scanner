@@ -11,6 +11,8 @@
 using namespace cv;
 using namespace std;
 
+using Clock=std::chrono::high_resolution_clock;
+
 void ShowManyImages(string title, int nArgs, ...);
 void ProcessMatImage(cv::Mat& img);
 
@@ -28,14 +30,27 @@ int main(int argc, char* argv[])
     imgs.push_back(img3);
     imgs.push_back(img4);
 
+    int counter = 0;
     for (cv::Mat& img : imgs)
     {
+        auto t1 = Clock::now();
+
+        /* Process mat under chrono timed */
         ProcessMatImage(img);
+
+        auto t2 = Clock::now();
+        std::cout << "Delta t2-t1: " 
+                  << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count()
+                  << " nanoseconds" << std::endl;
+
+        counter++;
+        cv::namedWindow("img"+counter, WINDOW_NORMAL);
+        cv::imshow("img"+counter, img);
     }
 
     const String namedWindow = "Scharr derived gradient";
 
-    ShowManyImages(namedWindow, 4, img1, img2, img3, img4);
+    //ShowManyImages(namedWindow, 4, imgs[0], imgs[1], imgs[2], imgs[3]);
 
     //cv::namedWindow(namedWindow, WINDOW_NORMAL);
     //cv::imshow(namedWindow, img);
@@ -47,8 +62,11 @@ int main(int argc, char* argv[])
 
 void ProcessMatImage(cv::Mat& img) {
     // Convert RGB Mat to GRAY
-    cv::Mat gray;
-    cv::cvtColor(img, gray, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
+
+    // Scale down
+    double scaleFactor = 0.2;
+    cv::resize(img, img, cv::Size(), scaleFactor, scaleFactor);
 
     // Calculate image gradient
     const int ddepth = CV_32F;
@@ -56,25 +74,25 @@ void ProcessMatImage(cv::Mat& img) {
     cv::Mat abs_grad_x, abs_grad_y;
 
     // Blur for cleaner image
-    cv::GaussianBlur(img, gray, Size(3, 3), 0, 0, BORDER_DEFAULT);
+    cv::GaussianBlur(img, img, Size(3, 3), 0, 0, BORDER_DEFAULT);
 
     // nth image derivative w/ Sobel operator
-    cv::Sobel(gray, grad_x, ddepth, 1, 0, -1);
-    cv::Sobel(gray, grad_y, ddepth, 0, 1, -1);
+    //cv::Sobel(img, grad_x, ddepth, 1, 0, -1);
+    //cv::Sobel(img, grad_y, ddepth, 0, 1, -1);
 
     // 1st image derivative w/ Scharr op
-    //cv::Scharr(gray, grad_x, ddepth, 1, 0);
-    //cv::Scharr(gray, grad_y, ddepth, 0, 1);
+    cv::Scharr(img, grad_x, ddepth, 1, 0);
+    cv::Scharr(img, grad_y, ddepth, 0, 1);
 
     // converting back to CV_8U
     cv::convertScaleAbs(grad_x, abs_grad_x);
     cv::convertScaleAbs(grad_y, abs_grad_y);
 
     // Display gradiented img
-    cv::addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0, gray);
+    cv::addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0, img);
 
     // Blur to prepare for threshold
-    cv::blur(gray, img, Size(25,25));
+    cv::blur(img, img, Size(15,15));
 
     // Threshold gradient image
     cv::threshold(img, img, 110, 255, THRESH_BINARY);

@@ -1,7 +1,17 @@
 [
 {
   "directory": "/home/filip/Repos/Broad/barcode-scanner/build",
-  "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/opencv.dir/main.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/main.cpp",
-  "file": "/home/filip/Repos/Broad/barcode-scanner/main.cpp"
+  "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/hough.dir/hough.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/hough.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/hough.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build",
+  "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/edge.dir/edge.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/edge.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/edge.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build",
+  "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/sobel.dir/sobel.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/sobel.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/sobel.cpp"
 }
 ]
