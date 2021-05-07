@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/filip/Repos/Broad/barcode-scanner/build",
+  "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/video.dir/video.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/video.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/video.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build",
   "command": "/usr/bin/c++  -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/hough.dir/hough.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/hough.cpp",
   "file": "/home/filip/Repos/Broad/barcode-scanner/hough.cpp"
 },

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named video
+
+# Build rule for target.
+video: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 video
+.PHONY : video
+
+# fast build rule for target.
+video/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/build
+.PHONY : video/fast
+
+#=============================================================================
 # Target rules for targets named hough
 
 # Build rule for target.
@@ -227,6 +240,30 @@ sobel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel.dir/build.make CMakeFiles/sobel.dir/sobel.cpp.s
 .PHONY : sobel.cpp.s
 
+video.o: video.cpp.o
+.PHONY : video.o
+
+# target to build an object file
+video.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/video.cpp.o
+.PHONY : video.cpp.o
+
+video.i: video.cpp.i
+.PHONY : video.i
+
+# target to preprocess a source file
+video.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/video.cpp.i
+.PHONY : video.cpp.i
+
+video.s: video.cpp.s
+.PHONY : video.s
+
+# target to generate assembly for a file
+video.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/video.dir/build.make CMakeFiles/video.dir/video.cpp.s
+.PHONY : video.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -238,6 +275,7 @@ help:
 	@echo "... edge"
 	@echo "... hough"
 	@echo "... sobel"
+	@echo "... video"
 	@echo "... edge.o"
 	@echo "... edge.i"
 	@echo "... edge.s"
@@ -247,6 +285,9 @@ help:
 	@echo "... sobel.o"
 	@echo "... sobel.i"
 	@echo "... sobel.s"
+	@echo "... video.o"
+	@echo "... video.i"
+	@echo "... video.s"
 .PHONY : help
 
 

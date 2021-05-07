@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "edge"
+			"path" : "video"
 		}
 	],
 	"backtrace" : 1,
@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 16,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 13,
+				"line" : 14,
 				"parent" : 0
 			}
 		]
@@ -78,7 +78,7 @@
 			]
 		}
 	],
-	"id" : "edge::@6890427a1f51a3e7e1df",
+	"id" : "video::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -374,8 +374,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "edge",
-	"nameOnDisk" : "edge",
+	"name" : "video",
+	"nameOnDisk" : "video",
 	"paths" : 
 	{
 		"build" : ".",
@@ -396,7 +396,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "edge.cpp",
+			"path" : "video.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

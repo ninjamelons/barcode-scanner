@@ -24,11 +24,23 @@ int main(int argc, char* argv[])
     cv::Mat img2 = cv::imread(argv[2]);
     cv::Mat img3 = cv::imread(argv[3]);
     cv::Mat img4 = cv::imread(argv[4]);
+    cv::Mat img5 = cv::imread(argv[5]);
+    cv::Mat img6 = cv::imread(argv[6]);
+    cv::Mat img7 = cv::imread(argv[7]);
+    cv::Mat img8 = cv::imread(argv[8]);
+    cv::Mat img9 = cv::imread(argv[9]);
+    cv::Mat img10 = cv::imread(argv[10]);
 
     imgs.push_back(img1);
     imgs.push_back(img2);
     imgs.push_back(img3);
     imgs.push_back(img4);
+    imgs.push_back(img5);
+    imgs.push_back(img6);
+    imgs.push_back(img7);
+    imgs.push_back(img8);
+    imgs.push_back(img9);
+    imgs.push_back(img10);
 
     int counter = 0;
     for (cv::Mat &img : imgs)
@@ -107,7 +119,9 @@ Mat ProcessMatImage(cv::Mat &img) {
 
     // Remove noisy artifacting
     cv::erode(img, img, kernel, Point(-1,-1), 2, BORDER_CONSTANT, morphologyDefaultBorderValue());
-    cv::dilate(img, img, kernel, Point(-1,-1), 5, BORDER_CONSTANT, morphologyDefaultBorderValue());
+
+    // Enlarge main focus
+    cv::dilate(img, img, kernel, Point(-1,-1), 8, BORDER_CONSTANT, morphologyDefaultBorderValue());
 
     // Find and Create largest bounding box (contours)
     cv::Mat ogScale;
@@ -120,12 +134,14 @@ Mat ProcessMatImage(cv::Mat &img) {
     std::sort(imgContours.begin(), imgContours.end(), sortContourArea);
 
     Point2f vtx[4];
-    RotatedRect rect = cv::minAreaRect(imgContours[0]);
-    rect.points(vtx);
-
-    for (int i = 0; i < 4; i++)
-    {
-        line(raw, vtx[i], vtx[(i+1)%4], Scalar(0,255,0), 10, LINE_AA);
+    if(!imgContours.empty()) {
+        RotatedRect rect = cv::minAreaRect(imgContours[0]);
+        rect.points(vtx);
+    
+        for (int i = 0; i < 4; i++)
+        {
+            line(raw, vtx[i], vtx[(i+1)%4], Scalar(0,255,0), 10, LINE_AA);
+        }
     }
 
     return raw;

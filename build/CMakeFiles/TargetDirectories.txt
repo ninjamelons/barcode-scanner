@@ -1,5 +1,6 @@
 /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/rebuild_cache.dir
 /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/edit_cache.dir
+/home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/video.dir
 /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/hough.dir
 /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/edge.dir
 /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles/sobel.dir

@@ -9,9 +9,15 @@
             "program": "${command:cmake.launchTargetPath}",
             "args": [
                         "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg",
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_165452__01.jpg",
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_165606__02.jpg",
                         "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124354.jpg",
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124257.jpg",
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124304.jpg",
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124331.jpg",
                         "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124337.jpg",
-                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_165606__02.jpg"
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124350.jpg",
+                        "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210503_124354.jpg",
                     ],
             "cwd": "${workspaceFolder}",
         }
