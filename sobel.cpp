@@ -118,10 +118,10 @@ Mat ProcessMatImage(cv::Mat &img) {
     cv::morphologyEx(img, img, MORPH_CLOSE, kernel);
 
     // Remove noisy artifacting
-    cv::erode(img, img, kernel, Point(-1,-1), 2, BORDER_CONSTANT, morphologyDefaultBorderValue());
+    cv::erode(img, img, kernel, Point(-1,-1), 3.5, BORDER_CONSTANT, morphologyDefaultBorderValue());
 
     // Enlarge main focus
-    cv::dilate(img, img, kernel, Point(-1,-1), 8, BORDER_CONSTANT, morphologyDefaultBorderValue());
+    cv::dilate(img, img, kernel, Point(-1,-1), 18, BORDER_CONSTANT, morphologyDefaultBorderValue());
 
     // Find and Create largest bounding box (contours)
     cv::Mat ogScale;
@@ -133,9 +133,27 @@ Mat ProcessMatImage(cv::Mat &img) {
 
     std::sort(imgContours.begin(), imgContours.end(), sortContourArea);
 
+    Mat M, rotated, cropped;
     Point2f vtx[4];
     if(!imgContours.empty()) {
         RotatedRect rect = cv::minAreaRect(imgContours[0]);
+
+        // get angle and size from the bounding box
+        float angle = rect.angle;
+        Size rect_size = rect.size;
+
+        if (angle < -45.) {
+            angle += 90.0;
+            cv::swap(rect_size.width, rect_size.height);
+        }
+
+        // get the rotation matrix
+        M = getRotationMatrix2D(rect.center, angle, 1.0);
+        // perform the affine transformation
+        warpAffine(raw, rotated, M, raw.size(), INTER_CUBIC);
+        // crop the resulting image
+        getRectSubPix(rotated, rect_size, rect.center, cropped);
+
         rect.points(vtx);
     
         for (int i = 0; i < 4; i++)
@@ -144,7 +162,7 @@ Mat ProcessMatImage(cv::Mat &img) {
         }
     }
 
-    return raw;
+    return cropped;
 }
 
 

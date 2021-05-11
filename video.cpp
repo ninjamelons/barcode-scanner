@@ -9,7 +9,7 @@
 using namespace cv;
 using std::cout; using std::cerr; using std::endl; using std::vector;
 
-Mat ProcessMatImage(cv::Mat &img, int threshold, int blur);
+Mat ProcessMatImage(cv::Mat &img, int threshold, int blur, int angle);
 
 int main(int, char**)
 {
@@ -41,10 +41,15 @@ int main(int, char**)
     // Setup trackbar vars
     const int threshold_max = 255;
     const int blur_max = 31;
+    const int angle_max = 360;
+
     int threshold_slider = 115;
     int blur_slider = 15;
+    int angle_slider = 15;
+
     int threshold;
     int blur;
+    int angle;
 
     size_t nFrames = 0;
     bool enableProcessing = false;
@@ -85,6 +90,10 @@ int main(int, char**)
             sprintf( BlurTrackbar, "Blur x %d", blur_max );
             createTrackbar( BlurTrackbar, "Frame", &blur_slider, blur_max );
 
+            char AngleTrackbar[50];
+            sprintf( AngleTrackbar, "Blur x %d", angle_max );
+            createTrackbar( AngleTrackbar, "Frame", &angle_slider, angle_max );
+
             // Start processing tick count
             int64 tp0 = cv::getTickCount();
 
@@ -95,9 +104,11 @@ int main(int, char**)
             }
 
             threshold = (int) threshold_slider;
+            angle = (int) angle_slider;
 
             // Process Frame
-            Mat processed = ProcessMatImage(frame, threshold, blur);
+            Mat processed = ProcessMatImage(frame, threshold, blur, angle);
+
 
             //cv::Canny(frame, processed, 400, 1000, 5);
             
@@ -123,7 +134,7 @@ int main(int, char**)
 
 bool sortContourArea (vector<Point> i, vector<Point> j) { return (contourArea(i) > contourArea(j)); }
 
-Mat ProcessMatImage(cv::Mat &img, int threshold, int blur) {
+Mat ProcessMatImage(cv::Mat &img, int threshold, int blur, int angle) {
     //RawImg
     cv::Mat raw = img;
     // Convert RGB Mat to GRAY
@@ -142,12 +153,12 @@ Mat ProcessMatImage(cv::Mat &img, int threshold, int blur) {
     cv::GaussianBlur(img, img, Size(3, 3), 0, 0, BORDER_DEFAULT);
 
     // nth image derivative w/ Sobel operator
-    //cv::Sobel(img, grad_x, ddepth, 1, 0, -1);
-    //cv::Sobel(img, grad_y, ddepth, 0, 1, -1);
+    cv::Sobel(img, grad_x, ddepth, 1, 0, -1);
+    cv::Sobel(img, grad_y, ddepth, 0, 1, -1);
 
     // 1st image derivative w/ Scharr op
-    cv::Scharr(img, grad_x, ddepth, 1, 0);
-    cv::Scharr(img, grad_y, ddepth, 0, 1);
+    //cv::Scharr(img, grad_x, ddepth, 1, 0);
+    //cv::Scharr(img, grad_y, ddepth, 0, 1);
 
     // converting back to CV_8U
     cv::convertScaleAbs(grad_x, abs_grad_x);
