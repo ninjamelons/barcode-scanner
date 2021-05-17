@@ -48,8 +48,9 @@ int main(int argc, char* argv[])
         auto t1 = Clock::now();
 
         /* Process mat under chrono timed */
-        cv::Mat raw;
-        raw = ProcessMatImage(img);
+        cv::Mat raw, firstIter;
+        firstIter = ProcessMatImage(img);
+        raw = ProcessMatImage(firstIter);
 
         auto t2 = Clock::now();
         std::cout << "Delta t2-t1: " 
@@ -60,6 +61,9 @@ int main(int argc, char* argv[])
 
         cv::namedWindow(to_string(counter), WINDOW_NORMAL);
         cv::imshow(to_string(counter), img);
+
+        cv::namedWindow("iter" + to_string(counter), WINDOW_NORMAL);
+        cv::imshow("iter" + to_string(counter), firstIter);
 
         cv::namedWindow("raw" + to_string(counter), WINDOW_NORMAL);
         cv::imshow("raw" + to_string(counter), raw);

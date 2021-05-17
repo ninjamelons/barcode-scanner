@@ -87,14 +87,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles /home/filip/Repos/Broad/barcode-scanner/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles /home/filip/Repos/Broad/barcode-scanner/build/Preprocessing//CMakeFiles/progress.marks
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Preprocessing/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/filip/Repos/Broad/barcode-scanner/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Preprocessing/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,44 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Preprocessing/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Preprocessing/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Preprocessing
+# Convenience name for target.
+Preprocessing/CMakeFiles/Preprocessing.dir/rule:
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Preprocessing/CMakeFiles/Preprocessing.dir/rule
+.PHONY : Preprocessing/CMakeFiles/Preprocessing.dir/rule
 
-# Build rule for target.
-Preprocessing: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Preprocessing
+# Convenience name for target.
+Preprocessing: Preprocessing/CMakeFiles/Preprocessing.dir/rule
 .PHONY : Preprocessing
 
 # fast build rule for target.
 Preprocessing/fast:
-	$(MAKE) $(MAKESILENT) -f Preprocessing/CMakeFiles/Preprocessing.dir/build.make Preprocessing/CMakeFiles/Preprocessing.dir/build
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f Preprocessing/CMakeFiles/Preprocessing.dir/build.make Preprocessing/CMakeFiles/Preprocessing.dir/build
 .PHONY : Preprocessing/fast
 
-#=============================================================================
-# Target rules for targets named Decoding
+process.o: process.cpp.o
+.PHONY : process.o
 
-# Build rule for target.
-Decoding: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Decoding
-.PHONY : Decoding
+# target to build an object file
+process.cpp.o:
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f Preprocessing/CMakeFiles/Preprocessing.dir/build.make Preprocessing/CMakeFiles/Preprocessing.dir/process.cpp.o
+.PHONY : process.cpp.o
 
-# fast build rule for target.
-Decoding/fast:
-	$(MAKE) $(MAKESILENT) -f Decoding/CMakeFiles/Decoding.dir/build.make Decoding/CMakeFiles/Decoding.dir/build
-.PHONY : Decoding/fast
+process.i: process.cpp.i
+.PHONY : process.i
+
+# target to preprocess a source file
+process.cpp.i:
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f Preprocessing/CMakeFiles/Preprocessing.dir/build.make Preprocessing/CMakeFiles/Preprocessing.dir/process.cpp.i
+.PHONY : process.cpp.i
+
+process.s: process.cpp.s
+.PHONY : process.s
+
+# target to generate assembly for a file
+process.cpp.s:
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(MAKE) $(MAKESILENT) -f Preprocessing/CMakeFiles/Preprocessing.dir/build.make Preprocessing/CMakeFiles/Preprocessing.dir/process.cpp.s
+.PHONY : process.cpp.s
 
 # Help Target
 help:
@@ -150,8 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Decoding"
 	@echo "... Preprocessing"
+	@echo "... process.o"
+	@echo "... process.i"
+	@echo "... process.s"
 .PHONY : help
 
 
@@ -163,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/filip/Repos/Broad/barcode-scanner/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

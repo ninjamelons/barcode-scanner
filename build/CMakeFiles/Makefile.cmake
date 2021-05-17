@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../Decoding/CMakeLists.txt"
+  "../Preprocessing/CMakeLists.txt"
   "CMakeFiles/3.20.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
   "/usr/lib64/cmake/opencv4/OpenCVConfig-version.cmake"
@@ -41,12 +43,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Preprocessing/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Decoding/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/video.dir/DependInfo.cmake"
-  "CMakeFiles/hough.dir/DependInfo.cmake"
-  "CMakeFiles/edge.dir/DependInfo.cmake"
-  "CMakeFiles/sobel.dir/DependInfo.cmake"
+  "Preprocessing/CMakeFiles/Preprocessing.dir/DependInfo.cmake"
+  "Decoding/CMakeFiles/Decoding.dir/DependInfo.cmake"
   )

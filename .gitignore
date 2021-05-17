@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+#Muenster DB
+*/Muenster BarcodeDB/*
+*.zip
