@@ -1,3 +1,5 @@
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/Preprocessing/cmake")
+
 # Add all libraries in preprocessing
 add_library (Preprocessing process.cpp)
 

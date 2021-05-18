@@ -45,7 +45,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/filip/Repos/Broad/barcode-scanner/build/Preprocessing/cmake_install.cmake")
+  include("/home/filip/Repos/Broad/barcode-scanner/build/SampleApps/cmake_install.cmake")
   include("/home/filip/Repos/Broad/barcode-scanner/build/Decoding/cmake_install.cmake")
+  include("/home/filip/Repos/Broad/barcode-scanner/build/Tests/cmake_install.cmake")
 
 endif()
 

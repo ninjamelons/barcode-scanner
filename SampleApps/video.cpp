@@ -15,7 +15,7 @@ int main(int, char**)
 {
     Mat frame;
     cout << "Opening camera..." << endl;
-    VideoCapture capture(0); // open the first camera
+    VideoCapture capture(1); // open the first camera
 
     // Set initial FPS
     int FPS = 30;

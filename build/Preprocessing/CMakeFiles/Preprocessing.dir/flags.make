@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing
+CXX_INCLUDES = -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests
 
 CXX_FLAGS = -g -std=gnu++11
 

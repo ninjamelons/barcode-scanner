@@ -1,22 +1,52 @@
 [
 {
   "directory": "/home/filip/Repos/Broad/barcode-scanner/build/Preprocessing",
-  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -g -std=gnu++11 -o CMakeFiles/Preprocessing.dir/process.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Preprocessing/process.cpp",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -g -std=gnu++11 -o CMakeFiles/Preprocessing.dir/process.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Preprocessing/process.cpp",
   "file": "/home/filip/Repos/Broad/barcode-scanner/Preprocessing/process.cpp"
 },
 {
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build/SampleApps",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/video.dir/video.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/SampleApps/video.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/SampleApps/video.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build/SampleApps",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/hough.dir/hough.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/SampleApps/hough.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/SampleApps/hough.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build/SampleApps",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/edge.dir/edge.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/SampleApps/edge.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/SampleApps/edge.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build/SampleApps",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/sobel.dir/sobel.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/SampleApps/sobel.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/SampleApps/sobel.cpp"
+},
+{
   "directory": "/home/filip/Repos/Broad/barcode-scanner/build/Decoding",
-  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Decoding -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Decoding.dir/decoder.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Decoding/decoder.cpp",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Decoding.dir/decoder.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Decoding/decoder.cpp",
   "file": "/home/filip/Repos/Broad/barcode-scanner/Decoding/decoder.cpp"
 },
 {
   "directory": "/home/filip/Repos/Broad/barcode-scanner/build/Decoding",
-  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Decoding -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Decoding.dir/code39.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Decoding/code39.cpp",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Decoding.dir/code39.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Decoding/code39.cpp",
   "file": "/home/filip/Repos/Broad/barcode-scanner/Decoding/code39.cpp"
 },
 {
   "directory": "/home/filip/Repos/Broad/barcode-scanner/build/Decoding",
-  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Decoding -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Decoding.dir/ean13.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Decoding/ean13.cpp",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -isystem /usr/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Decoding.dir/ean13.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Decoding/ean13.cpp",
   "file": "/home/filip/Repos/Broad/barcode-scanner/Decoding/ean13.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build/Tests",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -g -std=gnu++11 -o CMakeFiles/libtests.dir/main.test.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Tests/main.test.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/Tests/main.test.cpp"
+},
+{
+  "directory": "/home/filip/Repos/Broad/barcode-scanner/build/Tests",
+  "command": "/usr/bin/c++  -I/home/filip/Repos/Broad/barcode-scanner/Preprocessing -I/home/filip/Repos/Broad/barcode-scanner/SampleApps -I/home/filip/Repos/Broad/barcode-scanner/Decoding -I/home/filip/Repos/Broad/barcode-scanner/Tests -g -std=gnu++11 -o CMakeFiles/libtests.dir/process.test.cpp.o -c /home/filip/Repos/Broad/barcode-scanner/Tests/process.test.cpp",
+  "file": "/home/filip/Repos/Broad/barcode-scanner/Tests/process.test.cpp"
 }
 ]

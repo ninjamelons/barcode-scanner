@@ -6,5 +6,6 @@ namespace Preprocessing
     {
     public:
         void firstPass();
+        void secondPass();
     };
 }

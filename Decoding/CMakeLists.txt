@@ -1,3 +1,5 @@
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/Decoding/cmake")
+
 # Add all libraries in decoding
 add_library (Decoding decoder.cpp code39.cpp ean13.cpp)
 

@@ -1,0 +1,5 @@
+if(EXISTS "/home/filip/Repos/Broad/barcode-scanner/Tests/libtests_tests-b12d07c.cmake")
+  include("/home/filip/Repos/Broad/barcode-scanner/Tests/libtests_tests-b12d07c.cmake")
+else()
+  add_test(libtests_NOT_BUILT-b12d07c libtests_NOT_BUILT-b12d07c)
+endif()
