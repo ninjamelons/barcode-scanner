@@ -1,11 +1,17 @@
 #pragma once
 
+#include <opencv2/core.hpp>
+
 namespace Preprocessing
 {
-    class Process
+    class ImgProcess
     {
     public:
-        void firstPass();
-        void secondPass();
+        ImgProcess();
+        void ThresholdPass(bool isNear, cv::Mat& img);
+        void GradientPass(const int angle);
+    private:
+        void FarThresholdPass();
+        void NearThresholdPass();
     };
 }

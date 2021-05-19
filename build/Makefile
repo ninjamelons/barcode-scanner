@@ -204,7 +204,7 @@ NightlyMemCheck: cmake_check_build_system
 
 # fast build rule for target.
 NightlyMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyMemCheck.dir/build.make Tests/CMakeFiles/NightlyMemCheck.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyMemCheck.dir/build.make Testing/CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
 
 #=============================================================================
@@ -217,7 +217,7 @@ NightlyTest: cmake_check_build_system
 
 # fast build rule for target.
 NightlyTest/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyTest.dir/build.make Tests/CMakeFiles/NightlyTest.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyTest.dir/build.make Testing/CMakeFiles/NightlyTest.dir/build
 .PHONY : NightlyTest/fast
 
 #=============================================================================
@@ -230,7 +230,7 @@ ContinuousConfigure: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousConfigure.dir/build.make Tests/CMakeFiles/ContinuousConfigure.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousConfigure.dir/build.make Testing/CMakeFiles/ContinuousConfigure.dir/build
 .PHONY : ContinuousConfigure/fast
 
 #=============================================================================
@@ -243,7 +243,7 @@ ContinuousBuild: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousBuild/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousBuild.dir/build.make Tests/CMakeFiles/ContinuousBuild.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousBuild.dir/build.make Testing/CMakeFiles/ContinuousBuild.dir/build
 .PHONY : ContinuousBuild/fast
 
 #=============================================================================
@@ -256,7 +256,7 @@ NightlyConfigure: cmake_check_build_system
 
 # fast build rule for target.
 NightlyConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyConfigure.dir/build.make Tests/CMakeFiles/NightlyConfigure.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyConfigure.dir/build.make Testing/CMakeFiles/NightlyConfigure.dir/build
 .PHONY : NightlyConfigure/fast
 
 #=============================================================================
@@ -269,7 +269,7 @@ NightlyMemoryCheck: cmake_check_build_system
 
 # fast build rule for target.
 NightlyMemoryCheck/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyMemoryCheck.dir/build.make Tests/CMakeFiles/NightlyMemoryCheck.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyMemoryCheck.dir/build.make Testing/CMakeFiles/NightlyMemoryCheck.dir/build
 .PHONY : NightlyMemoryCheck/fast
 
 #=============================================================================
@@ -282,7 +282,7 @@ ExperimentalTest: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalTest/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalTest.dir/build.make Tests/CMakeFiles/ExperimentalTest.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalTest.dir/build.make Testing/CMakeFiles/ExperimentalTest.dir/build
 .PHONY : ExperimentalTest/fast
 
 #=============================================================================
@@ -295,7 +295,7 @@ ContinuousUpdate: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousUpdate.dir/build.make Tests/CMakeFiles/ContinuousUpdate.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousUpdate.dir/build.make Testing/CMakeFiles/ContinuousUpdate.dir/build
 .PHONY : ContinuousUpdate/fast
 
 #=============================================================================
@@ -308,7 +308,7 @@ NightlyUpdate: cmake_check_build_system
 
 # fast build rule for target.
 NightlyUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyUpdate.dir/build.make Tests/CMakeFiles/NightlyUpdate.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyUpdate.dir/build.make Testing/CMakeFiles/NightlyUpdate.dir/build
 .PHONY : NightlyUpdate/fast
 
 #=============================================================================
@@ -321,7 +321,7 @@ ExperimentalMemCheck: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalMemCheck.dir/build.make Tests/CMakeFiles/ExperimentalMemCheck.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalMemCheck.dir/build.make Testing/CMakeFiles/ExperimentalMemCheck.dir/build
 .PHONY : ExperimentalMemCheck/fast
 
 #=============================================================================
@@ -334,7 +334,7 @@ ExperimentalSubmit: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalSubmit/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalSubmit.dir/build.make Tests/CMakeFiles/ExperimentalSubmit.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalSubmit.dir/build.make Testing/CMakeFiles/ExperimentalSubmit.dir/build
 .PHONY : ExperimentalSubmit/fast
 
 #=============================================================================
@@ -347,7 +347,7 @@ Experimental: cmake_check_build_system
 
 # fast build rule for target.
 Experimental/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/Experimental.dir/build.make Tests/CMakeFiles/Experimental.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/Experimental.dir/build.make Testing/CMakeFiles/Experimental.dir/build
 .PHONY : Experimental/fast
 
 #=============================================================================
@@ -360,7 +360,7 @@ ContinuousCoverage: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousCoverage.dir/build.make Tests/CMakeFiles/ContinuousCoverage.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousCoverage.dir/build.make Testing/CMakeFiles/ContinuousCoverage.dir/build
 .PHONY : ContinuousCoverage/fast
 
 #=============================================================================
@@ -373,7 +373,7 @@ ExperimentalConfigure: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalConfigure/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalConfigure.dir/build.make Tests/CMakeFiles/ExperimentalConfigure.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalConfigure.dir/build.make Testing/CMakeFiles/ExperimentalConfigure.dir/build
 .PHONY : ExperimentalConfigure/fast
 
 #=============================================================================
@@ -386,7 +386,7 @@ Continuous: cmake_check_build_system
 
 # fast build rule for target.
 Continuous/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/Continuous.dir/build.make Tests/CMakeFiles/Continuous.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/Continuous.dir/build.make Testing/CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
 
 #=============================================================================
@@ -399,7 +399,7 @@ Nightly: cmake_check_build_system
 
 # fast build rule for target.
 Nightly/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/Nightly.dir/build.make Tests/CMakeFiles/Nightly.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/Nightly.dir/build.make Testing/CMakeFiles/Nightly.dir/build
 .PHONY : Nightly/fast
 
 #=============================================================================
@@ -412,7 +412,7 @@ NightlySubmit: cmake_check_build_system
 
 # fast build rule for target.
 NightlySubmit/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlySubmit.dir/build.make Tests/CMakeFiles/NightlySubmit.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlySubmit.dir/build.make Testing/CMakeFiles/NightlySubmit.dir/build
 .PHONY : NightlySubmit/fast
 
 #=============================================================================
@@ -425,7 +425,7 @@ NightlyStart: cmake_check_build_system
 
 # fast build rule for target.
 NightlyStart/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyStart.dir/build.make Tests/CMakeFiles/NightlyStart.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyStart.dir/build.make Testing/CMakeFiles/NightlyStart.dir/build
 .PHONY : NightlyStart/fast
 
 #=============================================================================
@@ -438,7 +438,7 @@ ExperimentalCoverage: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalCoverage.dir/build.make Tests/CMakeFiles/ExperimentalCoverage.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalCoverage.dir/build.make Testing/CMakeFiles/ExperimentalCoverage.dir/build
 .PHONY : ExperimentalCoverage/fast
 
 #=============================================================================
@@ -451,7 +451,7 @@ NightlyCoverage: cmake_check_build_system
 
 # fast build rule for target.
 NightlyCoverage/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyCoverage.dir/build.make Tests/CMakeFiles/NightlyCoverage.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyCoverage.dir/build.make Testing/CMakeFiles/NightlyCoverage.dir/build
 .PHONY : NightlyCoverage/fast
 
 #=============================================================================
@@ -464,7 +464,7 @@ ExperimentalStart: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalStart/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalStart.dir/build.make Tests/CMakeFiles/ExperimentalStart.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalStart.dir/build.make Testing/CMakeFiles/ExperimentalStart.dir/build
 .PHONY : ExperimentalStart/fast
 
 #=============================================================================
@@ -477,7 +477,7 @@ NightlyBuild: cmake_check_build_system
 
 # fast build rule for target.
 NightlyBuild/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/NightlyBuild.dir/build.make Tests/CMakeFiles/NightlyBuild.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/NightlyBuild.dir/build.make Testing/CMakeFiles/NightlyBuild.dir/build
 .PHONY : NightlyBuild/fast
 
 #=============================================================================
@@ -490,7 +490,7 @@ ExperimentalBuild: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalBuild/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalBuild.dir/build.make Tests/CMakeFiles/ExperimentalBuild.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalBuild.dir/build.make Testing/CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
 #=============================================================================
@@ -503,7 +503,7 @@ ExperimentalUpdate: cmake_check_build_system
 
 # fast build rule for target.
 ExperimentalUpdate/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ExperimentalUpdate.dir/build.make Tests/CMakeFiles/ExperimentalUpdate.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ExperimentalUpdate.dir/build.make Testing/CMakeFiles/ExperimentalUpdate.dir/build
 .PHONY : ExperimentalUpdate/fast
 
 #=============================================================================
@@ -516,7 +516,7 @@ ContinuousStart: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousStart/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousStart.dir/build.make Tests/CMakeFiles/ContinuousStart.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousStart.dir/build.make Testing/CMakeFiles/ContinuousStart.dir/build
 .PHONY : ContinuousStart/fast
 
 #=============================================================================
@@ -529,7 +529,7 @@ ContinuousMemCheck: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousMemCheck/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousMemCheck.dir/build.make Tests/CMakeFiles/ContinuousMemCheck.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousMemCheck.dir/build.make Testing/CMakeFiles/ContinuousMemCheck.dir/build
 .PHONY : ContinuousMemCheck/fast
 
 #=============================================================================
@@ -542,7 +542,7 @@ ContinuousTest: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousTest/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousTest.dir/build.make Tests/CMakeFiles/ContinuousTest.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousTest.dir/build.make Testing/CMakeFiles/ContinuousTest.dir/build
 .PHONY : ContinuousTest/fast
 
 #=============================================================================
@@ -555,7 +555,7 @@ libtests: cmake_check_build_system
 
 # fast build rule for target.
 libtests/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/libtests.dir/build.make Tests/CMakeFiles/libtests.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/libtests.dir/build.make Testing/CMakeFiles/libtests.dir/build
 .PHONY : libtests/fast
 
 #=============================================================================
@@ -568,7 +568,7 @@ ContinuousSubmit: cmake_check_build_system
 
 # fast build rule for target.
 ContinuousSubmit/fast:
-	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/ContinuousSubmit.dir/build.make Tests/CMakeFiles/ContinuousSubmit.dir/build
+	$(MAKE) $(MAKESILENT) -f Testing/CMakeFiles/ContinuousSubmit.dir/build.make Testing/CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
 # Help Target
