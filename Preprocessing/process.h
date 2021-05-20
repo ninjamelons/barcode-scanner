@@ -11,7 +11,7 @@ namespace Preprocessing
         void ThresholdPass(bool isNear, cv::Mat& img);
         void GradientPass(const int angle);
     private:
-        void FarThresholdPass();
-        void NearThresholdPass();
+        void FarThresholdPass(cv::Mat& img);
+        void NearThresholdPass(cv::Mat& img);
     };
 }

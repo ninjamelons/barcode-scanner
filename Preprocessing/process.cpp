@@ -10,7 +10,14 @@ namespace Preprocessing
 
     void ImgProcess::ThresholdPass(bool isNear, cv::Mat& img)
     {
-        std::cout << "Threshold Pass" << std::endl;
+        if( isNear )
+        {
+            NearThresholdPass(img);
+        } else
+        {
+            FarThresholdPass(img);
+            NearThresholdPass(img);
+        }
     }
 
     void ImgProcess::GradientPass(const int angle)
@@ -18,12 +25,12 @@ namespace Preprocessing
         std::cout << "Gradient Pass" << std::endl;
     }
 
-    void ImgProcess::FarThresholdPass()
+    void ImgProcess::FarThresholdPass(cv::Mat& img)
     {
         std::cout << "Far Pass" << std::endl;
     }
 
-    void ImgProcess::NearThresholdPass()
+    void ImgProcess::NearThresholdPass(cv::Mat& img)
     {
         std::cout << "Near Pass" << std::endl;
     }
