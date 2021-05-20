@@ -1,8 +1,5 @@
-
-namespace BScanner
-{
-    namespace Types
-    {
+namespace BScanner {
+    namespace Types {
         class Transforms
         {
         public:
