@@ -95,12 +95,12 @@ Mat ProcessMatImage(cv::Mat &img) {
     cv::GaussianBlur(img, img, Size(3, 3), 0, 0, BORDER_DEFAULT);
 
     // nth image derivative w/ Sobel operator
-    //cv::Sobel(img, grad_x, ddepth, 1, 0, -1);
-    //cv::Sobel(img, grad_y, ddepth, 0, 1, -1);
+    cv::Sobel(img, grad_x, ddepth, 1, 0, -1);
+    cv::Sobel(img, grad_y, ddepth, 0, 1, -1);
 
     // 1st image derivative w/ Scharr op
-    cv::Scharr(img, grad_x, ddepth, 1, 0);
-    cv::Scharr(img, grad_y, ddepth, 0, 1);
+    //cv::Scharr(img, grad_x, ddepth, 1, 0);
+    //cv::Scharr(img, grad_y, ddepth, 0, 1);
 
     // converting back to CV_8U
     cv::convertScaleAbs(grad_x, abs_grad_x);
@@ -134,7 +134,6 @@ Mat ProcessMatImage(cv::Mat &img) {
     vector<vector<Point>> imgContours;
     vector<Vec4i> hierarchy;
     cv::findContours( ogScale, imgContours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE );
-
     std::sort(imgContours.begin(), imgContours.end(), sortContourArea);
 
     Mat M, rotated, cropped;

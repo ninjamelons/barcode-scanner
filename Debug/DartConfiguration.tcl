@@ -5,7 +5,7 @@
 
 # Configuration directories and files
 SourceDirectory: /home/filip/Repos/Broad/barcode-scanner
-BuildDirectory: /home/filip/Repos/Broad/barcode-scanner/Compile
+BuildDirectory: /home/filip/Repos/Broad/barcode-scanner/Debug
 
 # Where to place the cost data store
 CostDataFile: 
