@@ -13,12 +13,12 @@ int main(int, char**)
 {
     cv::Mat frame;
     std::cout << "Opening camera..." << std::endl;
-    cv::VideoCapture capture(0); // Test random numbers (e.g. 0-3) devices swap around whenever they feel like it
+    cv::VideoCapture capture(1); // Test random numbers (e.g. 0-3) devices swap around whenever they feel like it
     BScanner::ImgProcess imgPrc;
 
     // Set targeted FPS (image reads at FPS, but processing may take longer)
     int FPS = 30;
-    capture.set(cv::CAP_PROP_FPS, (double)FPS);
+    capture.set(cv::CAP_PROP_FPS, (double)FPS); // May affect processing/decoding poorly due to forced timings
 
     if (!capture.isOpened())
     {
@@ -39,6 +39,13 @@ int main(int, char**)
 
     BScanner::Threshold thresh1;
 
+    char OneThresholdTrackbar[50];
+    sprintf( OneThresholdTrackbar, "Threshold x %d", one_threshold_max );
+    cv::createTrackbar( OneThresholdTrackbar, "Image", &one_threshold_slider, one_threshold_max );
+    char OneBlurTrackbar[50];
+    sprintf( OneBlurTrackbar, "Blur x %d", one_blur_max );
+    cv::createTrackbar( OneBlurTrackbar, "Image", &one_blur_slider, one_blur_max );
+
     for (;;)
     {
         capture >> frame; // read the next frame from camera
@@ -47,13 +54,6 @@ int main(int, char**)
             std::cerr << "ERROR: Can't grab camera frame." << std::endl;
             break;
         }
-
-        char OneThresholdTrackbar[50];
-        sprintf( OneThresholdTrackbar, "Threshold x %d", one_threshold_max );
-        cv::createTrackbar( OneThresholdTrackbar, "Image", &one_threshold_slider, one_threshold_max );
-        char OneBlurTrackbar[50];
-        sprintf( OneBlurTrackbar, "Blur x %d", one_blur_max );
-        cv::createTrackbar( OneBlurTrackbar, "Image", &one_blur_slider, one_blur_max );
 
         thresh1.SetBlur((int) one_blur_slider);
         thresh1.SetThreshold((int) one_threshold_slider);

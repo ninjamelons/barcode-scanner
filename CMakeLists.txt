@@ -5,16 +5,18 @@ project(bscanner LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Add all libraries/types
-add_library (Threshold threshold.cpp)
+# Add OpenCV to project libraries
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-target_include_directories (Threshold PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
+# Include header directories
 include_directories(Preprocessing)
 include_directories(SampleApps)
 include_directories(Decoding)
 include_directories(Testing)
+include_directories(${PROJECT_SOURCE_DIR}) # Include .h header/type files in root
 
+# Add subdirectory CMakeLists to make
 add_subdirectory(Preprocessing)
 add_subdirectory(SampleApps)
 add_subdirectory(Decoding)

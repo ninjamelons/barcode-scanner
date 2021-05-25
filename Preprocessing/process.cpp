@@ -14,7 +14,7 @@ void ImgProcess::ThresholdPass(bool isNear, const cv::Mat& imgIn,
         passes.push_back(std::make_tuple(imgIn(rect.boundingRect()), rect));
     } else
     {
-        cv::RotatedRect t1 = FarThresholdPass(input, thresh);
+        cv::RotatedRect t1 = FarThresholdPass(input, thresh, 1920);
         
         cv::Mat patch;
 
@@ -24,8 +24,9 @@ void ImgProcess::ThresholdPass(bool isNear, const cv::Mat& imgIn,
         }
         catch (cv::Exception exc)
         {
-            passes.push_back(std::make_tuple(imgIn, t1));
+            patch = imgIn;
         }
+        passes.push_back(std::make_tuple(patch, t1));
     }
 }
 

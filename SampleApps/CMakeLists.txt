@@ -1,18 +1,16 @@
-list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/SampleApps/cmake")
-
 add_executable(sobel sobel.cpp)
 add_executable(hough hough.cpp)
 add_executable(edge edge.cpp)
 add_executable(video video.cpp)
 add_executable(roi roi.cpp)
 add_executable(librarySample librarySample.cpp)
+add_executable(decodeSample decodeSample.cpp)
 
 # Link OpenCV to executables
-find_package( OpenCV REQUIRED )
-include_directories( ${OpenCV_INCLUDE_DIRS} )
 target_link_libraries( sobel ${OpenCV_LIBS} Preprocessing Decoding )
 target_link_libraries( hough ${OpenCV_LIBS} Preprocessing Decoding )
 target_link_libraries( edge ${OpenCV_LIBS} Preprocessing Decoding )
 target_link_libraries( video ${OpenCV_LIBS} Preprocessing Decoding )
 target_link_libraries( roi ${OpenCV_LIBS} Preprocessing Decoding )
 target_link_libraries( librarySample ${OpenCV_LIBS} Preprocessing Decoding )
+target_link_libraries( decodeSample ${OpenCV_LIBS} Preprocessing Decoding )
