@@ -55,7 +55,7 @@ std::string Ean13::decodeValue(const cv::Mat row)
     int firstBlackIndex = -1;
     int lastBlackIndex = -1;
     int whiteCount = 0;
-    int whiteMax = 8;
+    int whiteMax = 15;
     int areaCount = 0;
     bool barcodeFound = false;
     int areas[95] = {0};
@@ -94,13 +94,13 @@ std::string Ean13::decodeValue(const cv::Mat row)
 
     // Decode first 6 digits (45 areas per section (including start) + 5 middle areas)
     float pixelAreaHalf = (lastBlackIndex - firstBlackIndex) / 2;
-    float pixelAreaHalfTwo = lastBlackIndex - pixelAreaHalf;
+    float pixelAreaHalfTwo = lastBlackIndex - pixelAreaHalf - firstBlackIndex;
 
     int pixelPerAreaHalf = (int) (pixelAreaHalf / 47.5);
     int pixelPerAreaHalfTwo = (int) (pixelAreaHalfTwo / 47.5);
 
-    pixelAreaHalf = pixelAreaHalf - (pixelAreaHalf * pixelPerAreaHalf);
-    pixelAreaHalfTwo = pixelAreaHalfTwo - (pixelAreaHalfTwo * pixelPerAreaHalfTwo);
+    pixelAreaHalf = pixelAreaHalf - (2.5 * pixelPerAreaHalf);
+    pixelAreaHalfTwo = pixelAreaHalfTwo + (2.5 * pixelPerAreaHalfTwo);
 
     int pixelPerAreaTotal = (int) ((lastBlackIndex - firstBlackIndex) / 95); // rounded down
 
@@ -109,7 +109,6 @@ std::string Ean13::decodeValue(const cv::Mat row)
     int currentArea = 1; // Black default
     for( int i = 1; i < 45; i++ )
     {
-        for( int j = 0; i < )
     }
 
     //std::cout << std::endl;
