@@ -10,10 +10,11 @@ namespace BScanner {
     class Result
     {
     public:
-        Result();
-        ~Result();
+        Result(Symbologies::Symbology sym, std::array<cv::Point, 4> cds, std::string val)
+            : symbology(sym), coords{cds}, value(val) {}
+        ~Result() {}
         Symbologies::Symbology symbology;   //barcode symbology
-        std::vector<cv::Point> coords;      //barcode corner coordinates
+        std::array<cv::Point, 4> coords;    //barcode corner coordinates
         std::string value;                  //barcode value
     };
 }

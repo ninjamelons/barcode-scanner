@@ -3,10 +3,9 @@
 #include <opencv2/imgproc.hpp>
 
 #include <iostream>
+#include <vector>
 #include <stdio.h>
 #include <stdarg.h>
-
-#include <vector>
 
 #include "threshold.h"
 #include "decoder.h"
@@ -45,11 +44,6 @@ void On_Trackbar( int, void* )
 
 int main(int argc, char* argv[])
 {
-    // Raw Windows
-    cv::namedWindow("Close Raw", cv::WINDOW_NORMAL);
-    cv::namedWindow("Med Raw", cv::WINDOW_NORMAL);
-    cv::namedWindow("Far Raw", cv::WINDOW_NORMAL);
-
     // Processed Windows
     cv::namedWindow("Close Proc", cv::WINDOW_NORMAL);
     cv::namedWindow("Med Proc", cv::WINDOW_NORMAL);
@@ -81,11 +75,6 @@ int main(int argc, char* argv[])
 
     On_Trackbar( 0,0 );
 
-    // Show unprocessed images
-    cv::imshow("Close Raw", img_close);
-    cv::imshow("Med Raw", img_med);
-    cv::imshow("Far Raw", img_far);
-
     cv::waitKey(0);
 
     return 0;
@@ -97,8 +86,6 @@ void processImg(const Mat& img, Mat& imgOut)
     float aspectTransform = img.cols / dim_slider;
     cv::resize(img, imgOut, cv::Size(), 1/aspectTransform, 1/aspectTransform);
 
-    //cv::GaussianBlur(imgOut, imgOut, Size(thresh.GetBlur(), thresh.GetBlur()), 0, 0, BORDER_DEFAULT);
-
     // Threshold gradient image
     cv::threshold(imgOut, imgOut, thresh.GetThreshold(), 255, THRESH_BINARY);
 
@@ -106,8 +93,16 @@ void processImg(const Mat& img, Mat& imgOut)
     cv::cvtColor(imgOut, imgOut, cv::COLOR_BGR2GRAY);
 }
 
-void decodeImg(const Mat& img)
+void decodeImg(const cv::Mat& img)
 {
     BScanner::Code39 decoder;
-    decoder.decode();
+    BScanner::Result res = decoder.decode(img);
+
+    // Print decoded value & coordinates
+    std::cout << res.symbology <<": "<< res.value << "; ";
+    if(res.coords.size() > 0)
+    {
+        std::cout << "Coords: ["<<
+            res.coords[0] <<','<< res.coords[1] <<','<< res.coords[2] <<','<< res.coords[2] << std::endl;
+    }
 }

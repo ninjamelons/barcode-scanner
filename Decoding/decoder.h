@@ -1,7 +1,11 @@
 #pragma once
 
+#include <opencv2/core.hpp>
+
 // C/C++ imports
 #include <vector>
+
+#include "result.h"
 
 namespace BScanner
 {
@@ -10,10 +14,11 @@ namespace BScanner
     protected:
         Decoder() {} // protected constructor - abstract class
     private:
-        virtual void decodeValues() = 0; // decodes specific row - symbology independant
+        virtual std::string decodeValue(const cv::Mat row) = 0; // decodes specific row
     public:
-        virtual void decode() = 0;
-        virtual void validate() = 0;
+        virtual BScanner::Result decode(const cv::Mat& img) = 0;
+        virtual std::vector<BScanner::Result> decodeMulti(const std::vector<cv::Mat> imgs) = 0;
+        virtual bool validate(const std::string value) = 0;
         ~Decoder() {} // public destructor
     };
 }

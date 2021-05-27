@@ -32,7 +32,10 @@ namespace BScanner {
             }
         }
 
-        friend std::ostream& operator<<(std::ostream &out, Threshold& threshold);
+        friend std::ostream& operator<<(std::ostream &os, Threshold& th)
+        {
+            return os << std::to_string(th.GetThreshold());
+        }
     private:
         unsigned short blur_;
         unsigned short threshold_;
