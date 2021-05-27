@@ -10,6 +10,7 @@
 #include "threshold.h"
 #include "decoder.h"
 #include "code39.h"
+#include "ean13.h"
 
 using namespace cv;
 
@@ -86,17 +87,17 @@ void processImg(const Mat& img, Mat& imgOut)
     float aspectTransform = img.cols / dim_slider;
     cv::resize(img, imgOut, cv::Size(), 1/aspectTransform, 1/aspectTransform);
 
-    // Threshold gradient image
-    cv::threshold(imgOut, imgOut, thresh.GetThreshold(), 255, THRESH_BINARY);
-
     // Convert RGB Mat to GRAY
     cv::cvtColor(imgOut, imgOut, cv::COLOR_BGR2GRAY);
+
+    // Threshold gradient image
+    cv::threshold(imgOut, imgOut, thresh.GetThreshold(), 255, THRESH_BINARY);
 }
 
 void decodeImg(const cv::Mat& img)
 {
-    BScanner::Code39 decoder;
-    BScanner::Result res = decoder.decode(img);
+    BScanner::Decoder* decoder = new BScanner::Ean13();
+    BScanner::Result res = decoder->decode(img);
 
     // Print decoded value & coordinates
     std::cout << res.symbology <<": "<< res.value << "; ";

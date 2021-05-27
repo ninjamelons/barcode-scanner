@@ -16,8 +16,8 @@ namespace BScanner
     private:
         virtual std::string decodeValue(const cv::Mat row) = 0; // decodes specific row
     public:
-        virtual BScanner::Result decode(const cv::Mat& img) = 0;
-        virtual std::vector<BScanner::Result> decodeMulti(const std::vector<cv::Mat> imgs) = 0;
+        BScanner::Result decode(const cv::Mat& img);
+        std::vector<BScanner::Result> decodeMulti(const std::vector<cv::Mat> imgs);
         virtual bool validate(const std::string value) = 0;
         ~Decoder() {} // public destructor
     };
