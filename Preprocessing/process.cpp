@@ -10,11 +10,11 @@ void ImgProcess::ThresholdPass(bool isNear, const cv::Mat& imgIn,
     cv::Mat input = imgIn;
     if( isNear )
     {
-        cv::RotatedRect rect = NearThresholdPass(input);
-        passes.push_back(std::make_tuple(imgIn(rect.boundingRect()), rect));
+        cv::Mat binBarcode = NearThresholdPass(input);
+        passes.push_back(std::make_tuple(binBarcode, cv::RotatedRect()));
     } else
     {
-        cv::RotatedRect t1 = FarThresholdPass(input, thresh, 1920);
+        cv::RotatedRect t1 = FarThresholdPass(input, thresh, 1080);
         
         cv::Mat patch;
 
@@ -91,12 +91,12 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
     cv::threshold(imgOut, imgOut, thresh.GetThreshold(), 255, cv::THRESH_BINARY);
 
     // Fill larger gaps between lines
-    cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(21, 7));
+    cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(thresh.GetKernelX(), thresh.GetKernelY()));
     cv::morphologyEx(imgOut, imgOut, cv::MORPH_CLOSE, kernel);
     
     // Remove noisy artifacting & Enlarge main focus
-    cv::erode(imgOut, imgOut, kernel, cv::Point(-1,-1), 3.5, cv::BORDER_CONSTANT, cv::morphologyDefaultBorderValue());
-    cv::dilate(imgOut, imgOut, kernel, cv::Point(-1,-1), 18, cv::BORDER_CONSTANT, cv::morphologyDefaultBorderValue());
+    //cv::erode(imgOut, imgOut, kernel, cv::Point(-1,-1), thresh.GetErode(), cv::BORDER_CONSTANT, cv::morphologyDefaultBorderValue());
+    //cv::dilate(imgOut, imgOut, kernel, cv::Point(-1,-1), thresh.GetDilate(), cv::BORDER_CONSTANT, cv::morphologyDefaultBorderValue());
 
     // Get largest contour
     std::vector<std::vector<cv::Point>> imgContours;
@@ -112,6 +112,15 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
     cv::Point2f vtx[4];
     cv::RotatedRect rect;
     if(!imgContours.empty()) {
+        for( auto &cont : imgContours )
+        {
+            cv::RotatedRect tmpRect = cv::minAreaRect(cont);
+            if( !(tmpRect.size.width / tmpRect.size.height < 5) )
+            {
+                rect = tmpRect;
+            }
+        }
+
         // Scale RotatedRect to Raw size
         rect = cv::minAreaRect(imgContours[0]);
         rect.center.x *= aspectTransform;
@@ -126,8 +135,19 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
     return rect;
 }
 
-cv::RotatedRect ImgProcess::NearThresholdPass(const cv::Mat& imgIn)
+cv::Mat ImgProcess::NearThresholdPass(const cv::Mat& imgIn)
 {
-    cv::RotatedRect rect;
-    return rect;
+    cv::Mat imgOut;
+
+    // Scale down - Super buggy with trackbar slider
+    float aspectTransform = imgIn.cols / 400;
+    cv::resize(imgIn, imgOut, cv::Size(), 1/aspectTransform, 1/aspectTransform);
+
+    // Convert RGB Mat to GRAY
+    cv::cvtColor(imgOut, imgOut, cv::COLOR_BGR2GRAY);
+
+    // Threshold gradient image
+    cv::threshold(imgOut, imgOut, 100, 255, cv::THRESH_BINARY);
+
+    return imgOut;
 }

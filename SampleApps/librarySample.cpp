@@ -33,9 +33,16 @@ int main(int, char**)
     // Setup trackbar vars
     const int one_threshold_max = 255;
     const int one_blur_max = 31;
+    const int one_kernelx_max = 31;
+    const int one_kernely_max = 31;
+    const int one_erode_max = 60; // divide by 2 - 30 max increments of 0.5
+    const int one_dilate_max = 60; // divide by 2 - 30 max increments of 0.5
 
-    int one_threshold_slider = 115;
-    int one_blur_slider = 15;
+    int one_threshold_slider = 130;
+    int one_blur_slider, one_kernelx_slider, one_kernely_slider;
+    int one_erode_slider, one_dilate_slider;
+    one_blur_slider = one_kernelx_slider = one_kernely_slider = 13;
+    one_erode_slider = one_dilate_slider = 8;
 
     BScanner::Threshold thresh1;
 
@@ -45,6 +52,18 @@ int main(int, char**)
     char OneBlurTrackbar[50];
     sprintf( OneBlurTrackbar, "Blur x %d", one_blur_max );
     cv::createTrackbar( OneBlurTrackbar, "Image", &one_blur_slider, one_blur_max );
+    char OneKernelXTrackbar[50];
+    sprintf( OneKernelXTrackbar, "KernelX x %d", one_kernelx_max );
+    cv::createTrackbar( OneKernelXTrackbar, "Image", &one_kernelx_slider, one_kernelx_max );
+    char OneKernelYTrackbar[50];
+    sprintf( OneKernelYTrackbar, "KernelY x %d", one_kernely_max );
+    cv::createTrackbar( OneKernelYTrackbar, "Image", &one_kernely_slider, one_kernely_max );
+    char OneErodeTrackbar[50];
+    sprintf( OneErodeTrackbar, "Erode x %d", one_erode_max );
+    cv::createTrackbar( OneErodeTrackbar, "Image", &one_erode_slider, one_erode_max );
+    char OneDilateTrackbar[50];
+    sprintf( OneDilateTrackbar, "Dilatex %d", one_dilate_max );
+    cv::createTrackbar( OneDilateTrackbar, "Image", &one_dilate_slider, one_dilate_max );
 
     for (;;)
     {
@@ -55,8 +74,11 @@ int main(int, char**)
             break;
         }
 
-        thresh1.SetBlur((int) one_blur_slider);
-        thresh1.SetThreshold((int) one_threshold_slider);
+        thresh1.SetBlur( one_blur_slider );
+        thresh1.SetThreshold( one_threshold_slider );
+        thresh1.SetKernelXY( one_kernelx_slider, one_kernely_slider );
+        thresh1.SetErode( one_erode_slider );
+        thresh1.SetDilate( one_dilate_slider );
 
         std::vector<std::tuple<cv::Mat, cv::RotatedRect>> passes; 
     
