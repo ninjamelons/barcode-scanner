@@ -8,6 +8,7 @@
 #include <stdarg.h>
 
 #include "threshold.h"
+#include "process.h"
 #include "decoder.h"
 #include "code39.h"
 #include "ean13.h"
@@ -20,18 +21,18 @@ cv::Mat img_close, img_med, img_far,
 BScanner::Threshold thresh;
 int dim_slider, threshold_slider, blur_slider;
 
-void processImg(const Mat& img, Mat& imgOut);
 void decodeImg(const Mat& img);
 
 void On_Trackbar( int, void* )
 {
+    BScanner::ImgProcess imgPrc;
     thresh.SetBlur((int) blur_slider);
     thresh.SetThreshold((int) threshold_slider);
 
     // Process imgs here
-    processImg(img_close, img_close_thresh);
-    processImg(img_med, img_med_thresh);
-    processImg(img_far, img_far_thresh);
+    img_close_thresh = imgPrc.NearThresholdPass(img_close);
+    img_med_thresh = imgPrc.NearThresholdPass(img_med);
+    img_far_thresh = imgPrc.NearThresholdPass(img_far);
 
     // Decode img here
     decodeImg(img_close_thresh);

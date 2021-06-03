@@ -4,32 +4,6 @@ using BScanner::ImgProcess;
 
 ImgProcess::ImgProcess() {}
 
-void ImgProcess::ThresholdPass(bool isNear, const cv::Mat& imgIn,
-    std::vector<std::tuple<cv::Mat, cv::RotatedRect>>& passes, Threshold thresh)
-{
-    cv::Mat input = imgIn;
-    if( isNear )
-    {
-        cv::Mat binBarcode = NearThresholdPass(input);
-        passes.push_back(std::make_tuple(binBarcode, cv::RotatedRect()));
-    } else
-    {
-        cv::RotatedRect t1 = FarThresholdPass(input, thresh, 1080);
-        
-        cv::Mat patch;
-
-        try
-        {
-            patch = imgIn(t1.boundingRect());
-        }
-        catch (cv::Exception exc)
-        {
-            patch = imgIn;
-        }
-        passes.push_back(std::make_tuple(patch, t1));
-    }
-}
-
 void ImgProcess::GradientPass(const int angle)
 {
     std::cout << "Gradient Pass" << std::endl;

@@ -13,7 +13,7 @@ using BScanner::ImgProcess;
 TEST_CASE( "Image is processed", "[image]" )
 {
     // Generate section for X megapixel values
-    auto MP = GENERATE(2, 8, 16, 20);
+    auto MP = GENERATE(2, 8, 16);
 
     std::vector<std::string> imageNames;
     std::array<float,3> expectedTimes;
@@ -31,13 +31,7 @@ TEST_CASE( "Image is processed", "[image]" )
             imageNames = { "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg" };
             expectedTimes = { 0.04, 0.06, 0.04 };
             break;
-        case 20: // 6K
-            imageNames = { "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg" };
-            expectedTimes = { 0.04, 0.06, 0.04 };
-            break;
-        default: // Default/Nothing
-            imageNames = { "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg" };
-            expectedTimes = { 0.04, 0.06, 0.04 };
+        default: // Default/Nothing - Should never be the case
             break;
     }
 
@@ -60,8 +54,8 @@ TEST_CASE( "Image is processed", "[image]" )
             // Apply Far pass of Far vector
             for(int i = 0; i < MpImages.size(); i++)
             {
-                std::vector<std::tuple<cv::Mat, cv::RotatedRect>> passes;
-                imgPrc.ThresholdPass(false, MpImages[i], passes);
+                cv::Mat pass;
+                imgPrc.FarThresholdPass(MpImages[i]);
             }
             
             // Stop far timer
@@ -82,8 +76,7 @@ TEST_CASE( "Image is processed", "[image]" )
                 // Apply Near pass
                 for(int i = 0; i < MpImages.size(); i++)
                 {
-                    std::vector<std::tuple<cv::Mat, cv::RotatedRect>> nearPasses;
-                    imgPrc.ThresholdPass(true, MpImages[i], nearPasses);
+                    cv::Mat nearPass = imgPrc.NearThresholdPass(MpImages[i]);
                 }
 
                 // Stop Near timer
@@ -110,8 +103,7 @@ TEST_CASE( "Image is processed", "[image]" )
             // Apply Near pass
             for(int i = 0; i < MpImages.size(); i++)
             {
-                std::vector<std::tuple<cv::Mat, cv::RotatedRect>> passes;
-                imgPrc.ThresholdPass(true, MpImages[i], passes);
+                cv::Mat pass = imgPrc.NearThresholdPass(MpImages[i]);
             }
 
             // Stop Near timer

@@ -79,22 +79,29 @@ int main(int, char**)
         thresh1.SetKernelXY( one_kernelx_slider, one_kernely_slider );
         thresh1.SetErode( one_erode_slider );
         thresh1.SetDilate( one_dilate_slider );
-
-        std::vector<std::tuple<cv::Mat, cv::RotatedRect>> passes; 
     
         // Process Frame
-        imgPrc.ThresholdPass( false, frame, passes, thresh1 );
+        cv::RotatedRect rect;
+        rect = imgPrc.FarThresholdPass( frame, thresh1 );
+
+        cv::Mat patch;
+        try
+        {
+            patch = frame(rect.boundingRect());
+        }
+        catch (cv::Exception exc)
+        {
+            patch = frame;
+        }
 
         // Draw Rect on frame
         cv::Point2f vtx[4];
-        if(!passes.empty()) {
-            std::get<1>(passes[0]).points(vtx);
-            for (int i = 0; i < 4; i++)
-            {
-                line(frame, vtx[i], vtx[(i+1)%4], cv::Scalar(0,255,0), 10, cv::LINE_AA);
-            }
-            cv::imshow("Image ROI", std::get<0>(passes[0]));
+        rect.points(vtx);
+        for (int i = 0; i < 4; i++)
+        {
+            line(frame, vtx[i], vtx[(i+1)%4], cv::Scalar(0,255,0), 10, cv::LINE_AA);
         }
+        cv::imshow("Image ROI", patch);
         
         cv::imshow("Image", frame);
 

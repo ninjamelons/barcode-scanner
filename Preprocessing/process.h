@@ -15,12 +15,8 @@ namespace BScanner {
     {
     public:
         ImgProcess();
-        void ThresholdPass(bool isNear, const cv::Mat& img,
-            std::vector<std::tuple<cv::Mat, cv::RotatedRect>>& passes,
-            Threshold thresh = Threshold());
         void GradientPass(const int angle);
-    private:
-        cv::RotatedRect FarThresholdPass(const cv::Mat& imgIn, Threshold thresh, int maxDim = 640);
+        cv::RotatedRect FarThresholdPass(const cv::Mat& imgIn, Threshold thresh = Threshold(), int maxDim = 720);
         cv::Mat NearThresholdPass(const cv::Mat& img);
     };
 }
