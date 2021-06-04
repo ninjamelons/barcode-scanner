@@ -47,50 +47,17 @@ bool Ean13::validate(const std::string value)
  * @param row 
  * @return std::string 
  */
-std::string Ean13::decodeValue(const cv::Mat row)
+std::pair<std::string, std::pair<unsigned short, unsigned short>> Ean13::decodeValue(std::vector<int> row)
 {
     std::string decoded = "";
 
     // Find barcode pixels (truncated from background)
-    int firstBlackIndex = -1;
-    int lastBlackIndex = -1;
-    int whiteCount = 0;
-    int whiteMax = 15;
+    auto pair = getBarcodeLocation(row);
+    auto firstBlackIndex = std::get<0>(pair);
+    auto lastBlackIndex = std::get<1>(pair);
+
     int areaCount = 0;
-    bool barcodeFound = false;
     int areas[95] = {0};
-
-    for( int i = 0; i < row.cols; i++ )
-    {
-        int pixel = row.at<uchar>(i,0);
-
-        if( pixel == 255 )                  // BLACK PIXEL
-        {
-            if( !barcodeFound )
-            {
-                if( whiteCount >= whiteMax )
-                {
-                    firstBlackIndex = i;
-                    whiteCount = 0;
-                    barcodeFound = true;
-                }
-            } else
-            {
-                lastBlackIndex = i;
-                whiteCount = 0;
-            }
-        } else                              // WHITE PIXEL
-        {
-            whiteCount++;
-            if( barcodeFound )
-            {
-                if( whiteCount >= whiteMax )
-                {
-                    break; // No need to continue, barcode is fully encapsulated
-                }
-            }
-        }
-    }
 
     // Decode first 6 digits (45 areas per section (including start) + 5 middle areas)
     float pixelAreaHalf = (lastBlackIndex - firstBlackIndex) / 2;
@@ -104,14 +71,25 @@ std::string Ean13::decodeValue(const cv::Mat row)
 
     int pixelPerAreaTotal = (int) ((lastBlackIndex - firstBlackIndex) / 95); // rounded down
 
+    std::cout << std::to_string(firstBlackIndex) << "'" << std::to_string(lastBlackIndex) << std::endl;
     std::cout << std::to_string(pixelPerAreaHalf) <<';'<< std::to_string(pixelPerAreaHalfTwo) <<';'<< std::to_string(pixelPerAreaTotal) << std::endl;
     std::cout << std::to_string(pixelAreaHalf) <<';'<< std::to_string(pixelAreaHalfTwo) <<';'<< std::to_string(lastBlackIndex - firstBlackIndex) << std::endl;
     int currentArea = 1; // Black default
     for( int i = 1; i < 45; i++ )
     {
+
+    }
+    if(pixelAreaHalf > 30)
+    {
+        decoded = "Something";
     }
 
     //std::cout << std::endl;
 
-    return decoded;
+    return std::make_pair(decoded, pair);
+}
+
+Symbologies::Symbology Ean13::getSymbology()
+{
+    return Symbologies::EAN13;
 }

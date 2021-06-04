@@ -11,33 +11,52 @@ using BScanner::Decoder;
 BScanner::Result Decoder::decode(const cv::Mat& img)
 {
     // Decode row per row
-    cv::Mat row;                                        // Row to decode
+    std::vector<int> row;                               // Row to decode
     std::vector<std::string> modes;                     // Unique elements in values
     std::vector<int> modes_count;                       // Unique element counts in values
     std::vector<std::tuple<std::string, int>> values;   // Decoded values (Many will be wrong)
     std::string value = "";                             // Decoded value (Correct or empty)
-    std::array<cv::Point, 4> coords;                    // Corners of barcode
+    std::array<cv::Point, 4> coords = {};               // Corners of barcode
+    bool isFirstValidRow = false;
 
     for( int i = 0; i < img.rows; i++ )
     {
-        row = img.row(i);
+        row.clear();
+        for( int j = 0; j < img.cols; j++ )
+        {
+            row.push_back(img.at<uchar>(i, j));
+        }
+
         auto tmpDecoded = decodeValue(row);
-        bool isValid = validate(tmpDecoded);
+        auto stringDecoded = std::get<0>(tmpDecoded);
+        bool isValid = validate(stringDecoded);
         if( isValid )
         {
+            // Get corners
+            auto tmpPoint = std::get<1>(tmpDecoded);
+            if( !isFirstValidRow )
+            {
+                coords[1] = cv::Point(std::get<0>(tmpPoint), i);
+                coords[2] = cv::Point(std::get<1>(tmpPoint), i);
+                isFirstValidRow = true;
+            } else {
+                coords[0] = cv::Point(std::get<0>(tmpPoint), i);
+                coords[3] = cv::Point(std::get<1>(tmpPoint), i);
+            }
+
             // Determine if value in modes/modes_count
-            auto it = std::find(modes.begin(), modes.end(), tmpDecoded);
+            auto it = std::find(modes.begin(), modes.end(), stringDecoded);
             if( it != modes.end() ) // If iterator not at end, then element is found
             {
                 int index = it - modes.begin();
                 modes_count[index]++;
             } else
             {
-                modes.push_back(tmpDecoded);
+                modes.push_back(stringDecoded);
                 modes_count.push_back(0);
             }
 
-            values.push_back(std::make_tuple(tmpDecoded, i));
+            values.push_back(std::make_tuple(stringDecoded, i));
         }
     }
 
@@ -48,7 +67,7 @@ BScanner::Result Decoder::decode(const cv::Mat& img)
         value = modes[index];
     }
 
-    return BScanner::Result(Symbologies::CODE39, coords, value);
+    return BScanner::Result(getSymbology(), coords, value);
 }
 
 /**
@@ -67,4 +86,48 @@ std::vector<BScanner::Result> Decoder::decodeMulti(const std::vector<cv::Mat> im
     }
 
     return results;
+}
+
+std::pair<unsigned short, unsigned short> Decoder::getBarcodeLocation(std::vector<int> row)
+{
+    unsigned short firstBlackIndex = 0;
+    unsigned short lastBlackIndex = 0;
+    int sameCount = 0;
+    int sameMax = 50;
+    int maxColour = 0;
+    int lastColour = 0;
+    bool barcodeFound = false;
+
+    for( int i = 0; i < row.size(); i++ )
+    {
+        int pixel = row[i];
+
+        if( lastColour == pixel )
+        {
+            sameCount++;
+            if( !barcodeFound && sameCount >= sameMax ) // Same as last pixel or lots of same and barcode not found
+            {
+                maxColour = pixel;
+                continue;
+            }
+            if( barcodeFound && sameCount >= sameMax && maxColour == pixel) {
+                lastBlackIndex = i - sameCount;
+                break;
+            }
+        } else 
+        {
+            if( sameCount >= sameMax ) {
+                firstBlackIndex = i;
+                barcodeFound = true;
+            }
+            if( barcodeFound && sameCount < sameMax )
+            {
+                lastBlackIndex = i - 1; // -1 due to going over barcode by 1
+            }
+            sameCount = 1;
+        }
+        lastColour = pixel;
+    }
+    
+    return std::make_pair(firstBlackIndex, lastBlackIndex);
 }

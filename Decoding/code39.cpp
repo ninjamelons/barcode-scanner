@@ -19,19 +19,9 @@ bool Code39::validate(const std::string value)
  * @param row 
  * @return std::string 
  */
-std::string Code39::decodeValue(const cv::Mat row)
+std::pair<std::string, std::pair<unsigned short, unsigned short>> Code39::decodeValue(std::vector<int> row)
 {
     std::string decoded = "";
 
-    int firstBlack = -1;
-    int whiteCount = 0;
-    bool barcodeFound = false;
-
-    for( int i = 0; i < row.cols; i++ )
-    {
-        //std::cout << std::to_string(row.at<uchar>(i,0));
-    }
-    //std::cout << std::endl;
-
-    return decoded;
+    return std::make_pair(decoded, std::make_pair(0,0));
 }

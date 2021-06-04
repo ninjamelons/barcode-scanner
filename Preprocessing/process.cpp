@@ -109,12 +109,12 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
     return rect;
 }
 
-cv::Mat ImgProcess::NearThresholdPass(const cv::Mat& imgIn)
+cv::Mat ImgProcess::NearThresholdPass(const cv::Mat& imgIn, int outDims)
 {
     cv::Mat imgOut;
 
     // Scale down - Super buggy with trackbar slider
-    float aspectTransform = imgIn.cols / 400;
+    float aspectTransform = imgIn.cols / outDims;
     cv::resize(imgIn, imgOut, cv::Size(), 1/aspectTransform, 1/aspectTransform);
 
     // Convert RGB Mat to GRAY

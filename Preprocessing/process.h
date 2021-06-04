@@ -17,6 +17,6 @@ namespace BScanner {
         ImgProcess();
         void GradientPass(const int angle);
         cv::RotatedRect FarThresholdPass(const cv::Mat& imgIn, Threshold thresh = Threshold(), int maxDim = 720);
-        cv::Mat NearThresholdPass(const cv::Mat& img);
+        cv::Mat NearThresholdPass(const cv::Mat& img, int outDims = 300);
     };
 }
