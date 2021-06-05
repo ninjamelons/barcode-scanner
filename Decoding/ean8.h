@@ -4,13 +4,13 @@
 
 namespace BScanner
 {
-    class Code39 : public Decoder
+    class Ean8 : public Decoder
     {
     private:
         std::pair<std::string, std::pair<unsigned short, unsigned short>> decodeValue(std::vector<int> row);
     public:
-        Code39() {}
-        ~Code39() {}
+        Ean8() {}
+        ~Ean8() {}
         bool validate(const std::string value);
         Symbologies::Symbology getSymbology();
     };

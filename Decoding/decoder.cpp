@@ -14,7 +14,6 @@ BScanner::Result Decoder::decode(const cv::Mat& img)
     std::vector<int> row;                               // Row to decode
     std::vector<std::string> modes;                     // Unique elements in values
     std::vector<int> modes_count;                       // Unique element counts in values
-    std::vector<std::tuple<std::string, int>> values;   // Decoded values (Many will be wrong)
     std::string value = "";                             // Decoded value (Correct or empty)
     std::array<cv::Point, 4> coords = {};               // Corners of barcode
     bool isFirstValidRow = false;
@@ -55,8 +54,6 @@ BScanner::Result Decoder::decode(const cv::Mat& img)
                 modes.push_back(stringDecoded);
                 modes_count.push_back(0);
             }
-
-            values.push_back(std::make_tuple(stringDecoded, i));
         }
     }
 

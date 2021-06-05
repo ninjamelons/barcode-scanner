@@ -1,8 +1,8 @@
-#include "code39.h"
+#include "code128.h"
 
-using BScanner::Code39;
+using BScanner::Code128;
 
-bool Code39::validate(const std::string value)
+bool Code128::validate(const std::string value)
 {
     bool isValid = true;
     if( value == "" )
@@ -13,7 +13,7 @@ bool Code39::validate(const std::string value)
     return isValid;
 }
 
-std::pair<std::string, std::pair<unsigned short, unsigned short>> Code39::decodeValue(std::vector<int> row)
+std::pair<std::string, std::pair<unsigned short, unsigned short>> Code128::decodeValue(std::vector<int> row)
 {
     std::string decoded = "";
 
@@ -23,7 +23,7 @@ std::pair<std::string, std::pair<unsigned short, unsigned short>> Code39::decode
     return std::make_pair(decoded, pair);
 }
 
-Symbologies::Symbology Code39::getSymbology()
+Symbologies::Symbology Code128::getSymbology()
 {
-    return Symbologies::CODE39;
+    return Symbologies::CODE128;
 }
