@@ -21,15 +21,15 @@ TEST_CASE( "Image is processed", "[image]" )
     switch(MP) {
         case 2: // 1080p
             imageNames = { "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg" };
-            expectedTimes = { 0.04, 0.06, 0.04 };
+            expectedTimes = { 0.04, 0.045, 0.04 };
             break;
         case 8: // 4K
             imageNames = { "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg" };
-            expectedTimes = { 0.04, 0.06, 0.04 };
+            expectedTimes = { 0.04, 0.045, 0.04 };
             break;
         case 16: // 5K
             imageNames = { "/home/filip/Repos/Broad/barcode-scanner/images/IMG_20210428_163227.jpg" };
-            expectedTimes = { 0.04, 0.06, 0.04 };
+            expectedTimes = { 0.04, 0.045, 0.04 };
             break;
         default: // Default/Nothing - Should never be the case
             break;
