@@ -4,9 +4,10 @@ using BScanner::ImgProcess;
 
 ImgProcess::ImgProcess() {}
 
-void ImgProcess::GradientPass(const int angle)
+cv::RotatedRect ImgProcess::GradientPass(int angleSpacing, int maxDim)
 {
     std::cout << "Gradient Pass" << std::endl;
+    return cv::RotatedRect();
 }
 
 cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thresh, int maxDim)
@@ -109,7 +110,43 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
     return rect;
 }
 
-cv::Mat ImgProcess::NearThresholdPass(const cv::Mat& imgIn, int outDims)
+/**
+ * @brief Crops and transforms input image from rotated rect to horizontal(90deg)
+ * 
+ * @param img full image
+ * @param rect barcode region in img
+ * @return cv::Mat 
+ */
+cv::Mat ImgProcess::TransformRotated(const cv::Mat& img, cv::RotatedRect rect)
+{
+    cv::Mat out, rotated, M;
+
+    float angle = rect.angle;
+    cv::Size rect_size = rect.size;
+
+    if (angle < -45.) {
+        angle += 90.0;
+        cv::swap(rect_size.width, rect_size.height);
+    }
+
+    // get the rotation matrix
+    M = cv::getRotationMatrix2D(rect.center, angle, 1.0);
+    // perform the affine transformation
+    cv::warpAffine(img, rotated, M, img.size(), cv::INTER_CUBIC);
+    // crop the resulting image
+    cv::getRectSubPix(rotated, rect_size, rect.center, out);
+
+    return out;
+}
+
+/**
+ * @brief Resizes to manageable size and thresholds for decoding
+ * 
+ * @param imgIn 
+ * @param outDims 
+ * @return cv::Mat 
+ */
+cv::Mat ImgProcess::PrepareRegion(const cv::Mat& imgIn, int outDims)
 {
     cv::Mat imgOut;
 

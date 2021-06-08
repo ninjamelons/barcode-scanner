@@ -2,6 +2,8 @@
 
 using BScanner::Decoder;
 
+Decoder::~Decoder() {}
+
 /**
  * @brief 
  * 

@@ -34,9 +34,9 @@ void On_Trackbar( int, void* ptr )
     cv::Mat img_close_thresh, img_med_thresh, img_far_thresh;
 
     // Process imgs here
-    img_close_thresh = imgPrc.NearThresholdPass(mats->matIn[0], dim_slider);
-    img_med_thresh = imgPrc.NearThresholdPass(mats->matIn[1], dim_slider);
-    //img_far_thresh = imgPrc.NearThresholdPass(mats->matIn[2], dim_slider);
+    img_close_thresh = imgPrc.PrepareRegion(mats->matIn[0], dim_slider);
+    img_med_thresh = imgPrc.PrepareRegion(mats->matIn[1], dim_slider);
+    //img_far_thresh = imgPrc.PrepareRegion(mats->matIn[2], dim_slider);
 
     // Decode img here
     auto res1 = decodeImg(img_close_thresh);

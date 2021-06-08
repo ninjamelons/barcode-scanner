@@ -23,7 +23,7 @@ namespace BScanner
         public:
             MultiDecoder(const std::vector<Symbologies::Symbology> symbologies);
             ~MultiDecoder();
-            BScanner::Result decode(const cv::Mat& frame, std::vector<Symbologies::Symbology> symbologies);
+            BScanner::Result decode(const cv::Mat& frame);
             std::vector<Symbologies::Symbology> getSymbologies();
     };
 }

@@ -8,10 +8,10 @@ namespace BScanner
     {
     private:
         std::pair<std::string, std::pair<unsigned short, unsigned short>> decodeValue(std::vector<int> row);
+        bool validate(const std::string value);
     public:
         Code128() {}
         ~Code128() {}
-        bool validate(const std::string value);
         Symbologies::Symbology getSymbology();
     };
 }

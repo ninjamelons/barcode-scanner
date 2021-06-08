@@ -76,7 +76,7 @@ TEST_CASE( "Image is processed", "[image]" )
                 // Apply Near pass
                 for(int i = 0; i < MpImages.size(); i++)
                 {
-                    cv::Mat nearPass = imgPrc.NearThresholdPass(MpImages[i]);
+                    cv::Mat nearPass = imgPrc.PrepareRegion(MpImages[i]);
                 }
 
                 // Stop Near timer
@@ -103,7 +103,7 @@ TEST_CASE( "Image is processed", "[image]" )
             // Apply Near pass
             for(int i = 0; i < MpImages.size(); i++)
             {
-                cv::Mat pass = imgPrc.NearThresholdPass(MpImages[i]);
+                cv::Mat pass = imgPrc.PrepareRegion(MpImages[i]);
             }
 
             // Stop Near timer

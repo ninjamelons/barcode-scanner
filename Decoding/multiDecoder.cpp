@@ -18,19 +18,9 @@ MultiDecoder::~MultiDecoder() {}
  * @param symbologies 
  * @return BScanner::Result 
  */
-BScanner::Result MultiDecoder::decode(const cv::Mat& frame, std::vector<Symbologies::Symbology> symbologies)
+BScanner::Result MultiDecoder::decode(const cv::Mat& frame)
 {
     BScanner::Result res;
-
-    for( int i = 0; i < decoders.size(); i++ )
-    {
-        BScanner::Result tempRes = decoders[i]->decode(frame);
-        if( tempRes.value != "" )
-        {
-            res = tempRes;
-            break;
-        }
-    }
 
     for( auto it = decoders.begin(); it != decoders.end(); it++ )
     {
