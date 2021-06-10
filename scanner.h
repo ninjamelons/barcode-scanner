@@ -12,7 +12,7 @@ namespace BScanner
             BScanner::MultiDecoder decoder;
             BScanner::ImgProcess processor;
         public:
-            Scanner(std::vector<Symbologies::Symbology> symbologies) :
+            Scanner(const std::vector<Symbologies::Symbology> symbologies) :
                 decoder{symbologies},
                 processor{} {}
             ~Scanner() {}

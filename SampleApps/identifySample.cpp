@@ -13,7 +13,7 @@ int main(int, char**)
 {
     cv::Mat frame;
     std::cout << "Opening camera..." << std::endl;
-    cv::VideoCapture capture(1); // Test random numbers (e.g. 0-3) devices swap around whenever they feel like it
+    cv::VideoCapture capture(0); // Test random numbers (e.g. 0-3) devices swap around whenever they feel like it
     BScanner::ImgProcess imgPrc;
 
     // Set targeted FPS (image reads at FPS, but processing may take longer)

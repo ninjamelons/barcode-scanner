@@ -43,6 +43,9 @@ void On_Trackbar( int, void* ptr )
     auto res2 = decodeImg(img_med_thresh);
     //decodeImg(img_far_thresh);
 
+    std::cout << res1.value << std::endl;
+    std::cout << res2.value << std::endl;
+
 
     for (int i = 0; i < 4; i++)
     {

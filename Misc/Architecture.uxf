@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>330</y>
-      <w>180</w>
-      <h>90</h>
+      <x>200</x>
+      <y>376</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>
 
@@ -17,10 +17,10 @@ Decoder</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>0</y>
-      <w>180</w>
-      <h>90</h>
+      <x>304</x>
+      <y>112</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>
 
@@ -30,10 +30,10 @@ User Application</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>330</y>
-      <w>180</w>
-      <h>90</h>
+      <x>416</x>
+      <y>376</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>
 
@@ -43,10 +43,10 @@ Processor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>220</y>
-      <w>160</w>
-      <h>130</h>
+      <x>264</x>
+      <y>288</y>
+      <w>128</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;110.0;10.0;60.0;140.0;60.0;140.0;10.0</additional_attributes>
@@ -54,10 +54,10 @@ Processor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>220</y>
-      <w>180</w>
-      <h>130</h>
+      <x>368</x>
+      <y>288</y>
+      <w>144</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>160.0;110.0;160.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
@@ -65,10 +65,10 @@ Processor</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>140</y>
-      <w>180</w>
-      <h>90</h>
+      <x>304</x>
+      <y>224</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>
 
@@ -78,10 +78,10 @@ Scannner</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>80</y>
-      <w>30</w>
-      <h>80</h>
+      <x>368</x>
+      <y>176</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
@@ -89,10 +89,10 @@ Scannner</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>360</x>
-      <y>650</y>
-      <w>200</w>
-      <h>170</h>
+      <x>400</x>
+      <y>632</y>
+      <w>160</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>Processor
 --
@@ -102,10 +102,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>730</y>
-      <w>140</w>
-      <h>30</h>
+      <x>208</x>
+      <y>696</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Decode
 
@@ -115,10 +115,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>110</x>
-      <y>650</y>
-      <w>160</w>
-      <h>120</h>
+      <x>200</x>
+      <y>632</y>
+      <w>128</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>Decoder
 --
@@ -128,10 +128,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>690</y>
-      <w>140</w>
-      <h>30</h>
+      <x>208</x>
+      <y>664</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Locate Barcode
 layer=1</panel_attributes>
@@ -140,10 +140,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>690</y>
-      <w>180</w>
-      <h>30</h>
+      <x>408</x>
+      <y>664</y>
+      <w>144</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Identify Barcode Region
 layer=1</panel_attributes>
@@ -152,10 +152,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>730</y>
-      <w>180</w>
-      <h>30</h>
+      <x>408</x>
+      <y>696</y>
+      <w>144</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Transform Region to Flat
 layer=1</panel_attributes>
@@ -164,10 +164,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>770</y>
-      <w>180</w>
-      <h>30</h>
+      <x>408</x>
+      <y>728</y>
+      <w>144</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Prepare Region for Decode
 layer=1</panel_attributes>
@@ -176,10 +176,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>130</x>
-      <y>520</y>
-      <w>330</w>
-      <h>70</h>
+      <x>216</x>
+      <y>528</y>
+      <w>264</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Scanner
 --
@@ -189,10 +189,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>550</y>
-      <w>150</w>
-      <h>30</h>
+      <x>224</x>
+      <y>552</y>
+      <w>120</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Set Symbologies
 layer=1</panel_attributes>
@@ -201,10 +201,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>550</y>
-      <w>150</w>
-      <h>30</h>
+      <x>352</x>
+      <y>552</y>
+      <w>120</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Decode Frame
 layer=1</panel_attributes>
@@ -213,10 +213,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>580</y>
-      <w>180</w>
-      <h>90</h>
+      <x>216</x>
+      <y>576</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;70.0;10.0;40.0;160.0;40.0;160.0;10.0</additional_attributes>
@@ -224,10 +224,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>580</y>
-      <w>140</w>
-      <h>90</h>
+      <x>336</x>
+      <y>576</y>
+      <w>112</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;70.0;120.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
@@ -235,10 +235,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>1280</x>
-      <y>230</y>
-      <w>60</w>
-      <h>110</h>
+      <x>1136</x>
+      <y>296</y>
+      <w>48</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Driver</panel_attributes>
     <additional_attributes/>
@@ -246,10 +246,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1390</x>
-      <y>240</y>
-      <w>160</w>
-      <h>60</h>
+      <x>1224</x>
+      <y>304</y>
+      <w>128</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Video 
 Decode Symbologies</panel_attributes>
@@ -258,10 +258,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1330</x>
-      <y>250</y>
-      <w>80</w>
-      <h>40</h>
+      <x>1176</x>
+      <y>312</y>
+      <w>64</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
@@ -269,10 +269,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1660</x>
-      <y>180</y>
-      <w>190</w>
-      <h>40</h>
+      <x>1440</x>
+      <y>256</y>
+      <w>152</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Display Barcode Region(s)</panel_attributes>
     <additional_attributes/>
@@ -280,10 +280,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1540</x>
-      <y>180</y>
-      <w>140</w>
-      <h>40</h>
+      <x>1344</x>
+      <y>256</y>
+      <w>112</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;include&gt;&gt;</panel_attributes>
@@ -292,10 +292,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1660</x>
-      <y>250</y>
-      <w>190</w>
-      <h>40</h>
+      <x>1440</x>
+      <y>312</y>
+      <w>152</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Display Decoded Text(s)</panel_attributes>
     <additional_attributes/>
@@ -303,10 +303,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1390</x>
-      <y>310</y>
-      <w>160</w>
-      <h>60</h>
+      <x>1224</x>
+      <y>360</y>
+      <w>128</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Select Symbologies</panel_attributes>
     <additional_attributes/>
@@ -314,10 +314,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1330</x>
-      <y>260</y>
-      <w>80</w>
-      <h>100</h>
+      <x>1176</x>
+      <y>320</y>
+      <w>64</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;60.0;80.0</additional_attributes>
@@ -325,10 +325,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1540</x>
-      <y>190</y>
-      <w>150</w>
-      <h>90</h>
+      <x>1344</x>
+      <y>264</y>
+      <w>120</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>130.0;70.0;10.0;10.0</additional_attributes>
@@ -336,10 +336,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2250</x>
-      <y>90</y>
-      <w>100</w>
-      <h>30</h>
+      <x>1912</x>
+      <y>184</y>
+      <w>80</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Scanner</panel_attributes>
     <additional_attributes/>
@@ -347,10 +347,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2570</x>
-      <y>90</y>
-      <w>100</w>
-      <h>30</h>
+      <x>2168</x>
+      <y>184</y>
+      <w>80</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Processor</panel_attributes>
     <additional_attributes/>
@@ -358,10 +358,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2710</x>
-      <y>90</y>
-      <w>100</w>
-      <h>30</h>
+      <x>2280</x>
+      <y>184</y>
+      <w>80</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Decoder</panel_attributes>
     <additional_attributes/>
@@ -369,10 +369,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1950</x>
-      <y>340</y>
-      <w>360</w>
-      <h>40</h>
+      <x>1672</x>
+      <y>384</y>
+      <w>288</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Decode(Image) : Result</panel_attributes>
@@ -381,10 +381,10 @@ Decode(Image) : Result</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2750</x>
-      <y>110</y>
-      <w>30</w>
-      <h>510</h>
+      <x>2312</x>
+      <y>200</y>
+      <w>24</w>
+      <h>408</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;490.0;10.0;10.0</additional_attributes>
@@ -392,10 +392,10 @@ Decode(Image) : Result</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2610</x>
-      <y>110</y>
-      <w>30</w>
-      <h>300</h>
+      <x>2200</x>
+      <y>200</y>
+      <w>24</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
@@ -403,10 +403,10 @@ Decode(Image) : Result</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2610</x>
-      <y>390</y>
-      <w>20</w>
-      <h>180</h>
+      <x>2200</x>
+      <y>424</y>
+      <w>16</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -414,10 +414,10 @@ Decode(Image) : Result</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2290</x>
-      <y>190</y>
-      <w>20</w>
-      <h>660</h>
+      <x>1944</x>
+      <y>264</y>
+      <w>16</w>
+      <h>528</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -425,10 +425,10 @@ Decode(Image) : Result</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>110</y>
-      <w>30</w>
-      <h>100</h>
+      <x>1944</x>
+      <y>200</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
@@ -436,10 +436,10 @@ Decode(Image) : Result</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1950</x>
-      <y>170</y>
-      <w>360</w>
-      <h>40</h>
+      <x>1672</x>
+      <y>248</y>
+      <w>288</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Scanner(Symbologies)</panel_attributes>
@@ -448,10 +448,10 @@ Scanner(Symbologies)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1900</x>
-      <y>90</y>
-      <w>100</w>
-      <h>30</h>
+      <x>1632</x>
+      <y>184</y>
+      <w>80</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Client</panel_attributes>
     <additional_attributes/>
@@ -459,10 +459,10 @@ Scanner(Symbologies)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1940</x>
-      <y>170</y>
-      <w>20</w>
-      <h>690</h>
+      <x>1664</x>
+      <y>248</y>
+      <w>16</w>
+      <h>552</h>
     </coordinates>
     <panel_attributes>
 layer=-1</panel_attributes>
@@ -471,10 +471,10 @@ layer=-1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1940</x>
-      <y>110</y>
-      <w>30</w>
-      <h>80</h>
+      <x>1664</x>
+      <y>200</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
@@ -482,10 +482,10 @@ layer=-1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1950</x>
-      <y>300</y>
-      <w>360</w>
-      <h>30</h>
+      <x>1672</x>
+      <y>352</y>
+      <w>288</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
@@ -493,10 +493,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>2150</x>
-      <y>210</y>
-      <w>360</w>
-      <h>80</h>
+      <x>1832</x>
+      <y>280</y>
+      <w>288</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>Loop symbologies</panel_attributes>
     <additional_attributes/>
@@ -504,10 +504,10 @@ layer=-1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>370</y>
-      <w>330</w>
-      <h>40</h>
+      <x>1952</x>
+      <y>408</y>
+      <w>264</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 IdentifyRegion(Image)</panel_attributes>
@@ -516,10 +516,10 @@ IdentifyRegion(Image)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>420</y>
-      <w>330</w>
-      <h>40</h>
+      <x>1952</x>
+      <y>448</y>
+      <w>264</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Return Region Image</panel_attributes>
@@ -528,10 +528,10 @@ Return Region Image</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>480</y>
-      <w>330</w>
-      <h>40</h>
+      <x>1952</x>
+      <y>496</y>
+      <w>264</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 ProcessRegion(Region Image)</panel_attributes>
@@ -540,10 +540,10 @@ ProcessRegion(Region Image)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>530</y>
-      <w>330</w>
-      <h>40</h>
+      <x>1952</x>
+      <y>536</y>
+      <w>264</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Return Processed Image</panel_attributes>
@@ -552,10 +552,10 @@ Return Processed Image</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>2150</x>
-      <y>580</y>
-      <w>790</w>
-      <h>180</h>
+      <x>1832</x>
+      <y>576</y>
+      <w>632</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>Loop decoders list</panel_attributes>
     <additional_attributes/>
@@ -563,10 +563,10 @@ Return Processed Image</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>600</y>
-      <w>470</w>
-      <h>40</h>
+      <x>1952</x>
+      <y>592</y>
+      <w>376</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Decode(Processed Image)</panel_attributes>
@@ -575,10 +575,10 @@ Decode(Processed Image)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2750</x>
-      <y>600</y>
-      <w>20</w>
-      <h>130</h>
+      <x>2312</x>
+      <y>592</y>
+      <w>16</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -586,10 +586,10 @@ Decode(Processed Image)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>220</y>
-      <w>190</w>
-      <h>70</h>
+      <x>1952</x>
+      <y>288</y>
+      <w>152</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Add decoder to list</panel_attributes>
@@ -598,10 +598,10 @@ Add decoder to list</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2300</x>
-      <y>690</y>
-      <w>470</w>
-      <h>40</h>
+      <x>1952</x>
+      <y>664</y>
+      <w>376</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Return Result</panel_attributes>
@@ -610,10 +610,10 @@ Return Result</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2610</x>
+      <x>2200</x>
       <y>560</y>
-      <w>30</w>
-      <h>380</h>
+      <w>24</w>
+      <h>304</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;360.0;10.0;10.0</additional_attributes>
@@ -621,10 +621,10 @@ Return Result</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1950</x>
-      <y>790</y>
-      <w>360</w>
-      <h>50</h>
+      <x>1672</x>
+      <y>744</y>
+      <w>288</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Return Result 
@@ -634,10 +634,10 @@ Return Result
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1940</x>
-      <y>850</y>
-      <w>30</w>
-      <h>90</h>
+      <x>1664</x>
+      <y>792</y>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
@@ -645,10 +645,10 @@ Return Result
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2290</x>
-      <y>840</y>
-      <w>30</w>
-      <h>100</h>
+      <x>1944</x>
+      <y>784</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
@@ -656,10 +656,10 @@ Return Result
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2750</x>
-      <y>720</y>
-      <w>30</w>
-      <h>220</h>
+      <x>2312</x>
+      <y>688</y>
+      <w>24</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
@@ -667,10 +667,10 @@ Return Result
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2760</x>
-      <y>640</y>
-      <w>190</w>
-      <h>70</h>
+      <x>2320</x>
+      <y>624</y>
+      <w>152</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Validate decoded</panel_attributes>
@@ -679,10 +679,10 @@ Validate decoded</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>1390</x>
-      <y>170</y>
-      <w>160</w>
-      <h>60</h>
+      <x>1224</x>
+      <y>248</y>
+      <w>128</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Image
 Decode Symbologies</panel_attributes>
@@ -691,10 +691,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1330</x>
-      <y>190</y>
-      <w>80</w>
-      <h>100</h>
+      <x>1176</x>
+      <y>264</y>
+      <w>64</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;80.0;60.0;10.0</additional_attributes>
@@ -702,10 +702,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1540</x>
-      <y>200</y>
-      <w>150</w>
-      <h>90</h>
+      <x>1344</x>
+      <y>272</y>
+      <w>120</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>130.0;10.0;10.0;70.0</additional_attributes>
@@ -713,10 +713,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1540</x>
-      <y>250</y>
-      <w>140</w>
-      <h>40</h>
+      <x>1344</x>
+      <y>312</y>
+      <w>112</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;include&gt;&gt;</panel_attributes>
@@ -725,10 +725,10 @@ Decode Symbologies</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>30</x>
-      <y>810</y>
-      <w>140</w>
-      <h>110</h>
+      <x>136</x>
+      <y>760</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>EAN13
 bg=red</panel_attributes>
@@ -737,10 +737,10 @@ bg=red</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>880</y>
-      <w>120</w>
-      <h>30</h>
+      <x>144</x>
+      <y>816</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Validate Barcode
 layer=1</panel_attributes>
@@ -749,10 +749,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>840</y>
-      <w>120</w>
-      <h>30</h>
+      <x>144</x>
+      <y>784</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Decode Value
 layer=1</panel_attributes>
@@ -761,10 +761,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>210</x>
-      <y>810</y>
-      <w>140</w>
-      <h>110</h>
+      <x>280</x>
+      <y>760</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>EAN8
 bg=red</panel_attributes>
@@ -773,10 +773,10 @@ bg=red</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>880</y>
-      <w>120</w>
-      <h>30</h>
+      <x>288</x>
+      <y>816</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Validate Barcode
 layer=1</panel_attributes>
@@ -785,10 +785,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>840</y>
-      <w>120</w>
-      <h>30</h>
+      <x>288</x>
+      <y>784</y>
+      <w>96</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Decode Value
 layer=1</panel_attributes>
@@ -797,10 +797,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>760</y>
-      <w>80</w>
-      <h>70</h>
+      <x>256</x>
+      <y>720</y>
+      <w>64</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;50.0;60.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
@@ -808,10 +808,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>50</x>
-      <y>760</y>
-      <w>160</w>
-      <h>70</h>
+      <x>152</x>
+      <y>720</y>
+      <w>128</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;50.0;10.0;30.0;140.0;30.0;140.0;10.0</additional_attributes>
@@ -819,10 +819,10 @@ layer=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>760</y>
-      <w>30</w>
-      <h>200</h>
+      <x>256</x>
+      <y>720</y>
+      <w>24</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
@@ -830,35 +830,132 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>270</y>
-      <w>290</w>
-      <h>140</h>
+      <x>600</x>
+      <y>432</y>
+      <w>232</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 Decoder
+--
 --
 #getBarcodeLocation(int[]) : (coords)
 +decode(image) : (value, coords, type)
 {virtual} -decodeValue(int[]) : (value, coords)
 {virtual} -validate(string) : bool
-{virtual} +getSymbology() : type
---</panel_attributes>
+{virtual} +getSymbology() : type</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>620</x>
-      <y>500</y>
-      <w>240</w>
-      <h>120</h>
+      <x>616</x>
+      <y>576</y>
+      <w>192</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Symbology
+--
 --
 -decodeValue(int[]) : (value, coords)
 -validate(string) : bool
 +getSymbology() : type</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>536</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>432</y>
+      <w>256</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Processor
+--
+--
++identifyBarcodeRegion(image) : region
++transformRotated(image, region) : image
++prepareRegion(image) : image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>288</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>MultiDecoder
+--
+-decoders : list(Decoder)
+--
++decode(image)
++getSymbologies(): types</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>368</y>
+      <w>56</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>128</y>
+      <w>264</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Scanner
+--
+-decoder : MultiDecoder
+--
++decodeRaw(image) : (value, coords, type)
++decodeProcessed(image) : (value, coords, type)
++processRaw(image) : image</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>208</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;50.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>208</y>
+      <w>176</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>160.0;280.0;160.0;50.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

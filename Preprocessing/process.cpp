@@ -90,7 +90,7 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
         for( auto &cont : imgContours )
         {
             cv::RotatedRect tmpRect = cv::minAreaRect(cont);
-            if( !(tmpRect.size.width / tmpRect.size.height < 5) )
+            if( !(tmpRect.size.width / tmpRect.size.height < 3) )
             {
                 rect = tmpRect;
             }
@@ -104,8 +104,11 @@ cv::RotatedRect ImgProcess::FarThresholdPass(const cv::Mat& imgIn, Threshold thr
         rect.size.height *= aspectTransform;
     }
 
+    /*
+    // Debug processing
     cv::namedWindow("Process imgOut", cv::WINDOW_NORMAL);
     cv::imshow("Process imgOut", imgOut);
+    */
 
     return rect;
 }

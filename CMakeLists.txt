@@ -25,4 +25,4 @@ add_subdirectory(Testing)
 
 add_library (Scanner scanner.cpp)
 target_link_libraries( Scanner )
-target_include_directories (Scanner PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${OpenCV_LIBS})
+target_include_directories (Scanner PUBLIC ${OpenCV_LIBS})

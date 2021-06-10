@@ -19,7 +19,7 @@ namespace BScanner {
         cv::RotatedRect FarThresholdPass(const cv::Mat& imgIn,
             Threshold thresh = Threshold(), int maxDim = 720);
         cv::Mat TransformRotated(const cv::Mat& img, cv::RotatedRect rect);
-        cv::Mat PrepareRegion(const cv::Mat& img, int outDims = 300);
+        cv::Mat PrepareRegion(const cv::Mat& img, int outDims = 600);
     };
 }
 
