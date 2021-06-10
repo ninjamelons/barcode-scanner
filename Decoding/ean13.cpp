@@ -2,8 +2,8 @@
 
 using BScanner::Ean13;
 
-const int EDGE_GUARD[3] = { 1, 0, 1 };
-const int CENTRE_GUARD[5] = { 0, 1, 0, 1, 0 };
+const int EDGE_GUARD[3] = { 1, 1, 1 };
+const int CENTRE_GUARD[5] = { 1, 1, 1, 1, 1 };
 
 // R_CODE is the L_CODE but inverted (black is white)
 // L_CODE starts with white

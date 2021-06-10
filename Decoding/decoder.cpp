@@ -91,8 +91,9 @@ std::pair<unsigned short, unsigned short> Decoder::getBarcodeLocation(std::vecto
 {
     unsigned short firstBlackIndex = 0;
     unsigned short lastBlackIndex = 0;
+    int areaCount = 0;
     int sameCount = 0;
-    int sameMax = 50;
+    int sameMax = 20;
     int maxColour = 0;
     int lastColour = 0;
     bool barcodeFound = false;
@@ -115,14 +116,27 @@ std::pair<unsigned short, unsigned short> Decoder::getBarcodeLocation(std::vecto
             }
         } else 
         {
+            //Larger than possible barcode
+            if( areaCount > 59 )
+            {
+                barcodeFound = false;
+                firstBlackIndex = 0;
+                lastBlackIndex = 0;
+            }
+
             if( sameCount >= sameMax ) {
                 firstBlackIndex = i;
                 barcodeFound = true;
             }
-            if( barcodeFound && sameCount < sameMax )
+            if( barcodeFound )
             {
-                lastBlackIndex = i - 1; // -1 due to going over barcode by 1
+                areaCount++;
+                if( sameCount < sameMax )
+                {
+                    lastBlackIndex = i - 1; // -1 due to going over barcode by 1
+                }
             }
+
             sameCount = 1;
         }
         lastColour = pixel;
